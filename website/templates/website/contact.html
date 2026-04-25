@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | RPS Switchgear SA{% endblock %}
+
+{% block content %}
+    {% include "website/partials/breadcrumbs.html" %}
+
+    <section class="page-hero page-hero--contact">
+        <div 
+            class="page-hero__bg-image"
+            style="background-image: url('{{ contact_image|default:'/static/img/contact.png' }}');">
+        </div>
+
+        <div class="container page-hero__grid">
+            <div class="hero-text-box">
+                <span class="eyebrow">Contact</span>
+                <h1>Contact RPS Switchgear SA for electrical engineering, switchgear, and infrastructure support.</h1>
+            </div>
+
+            <div class="hero-text-box hero-text-box--light">
+                <p class="page-hero__lead">
+                    Get in touch with the RPS Switchgear SA team for product enquiries, service support, project requirements, maintenance, testing, retrofit, renewable energy, and electrification work.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container split-layout split-layout--balanced">
+            <div>
+                <div class="section-heading section-heading--compact">
+                    <span class="eyebrow">Contact Details</span>
+                    <h2>Direct contact details for product, service, and project enquiries.</h2>
+                </div>
+                <div class="divider-list divider-list--compact">
+                    {% for detail in contact_details %}
+                        <article class="divider-item">
+                            <div class="divider-item__header">
+                                <span class="divider-item__label">{{ detail.label }}</span>
+                                {% if detail.label == "Email" %}
+                                    <h3>
+                                        <a href="mailto:{{ detail.value }}">
+                                            {{ detail.value }}
+                                        </a>
+                                    </h3>
+                                {% elif detail.label == "Telephone" %}
+                                    <h3>
+                                        <a href="tel:{{ detail.value|cut:' ' }}">
+                                            {{ detail.value }}
+                                        </a>
+                                    </h3>
+                                {% elif detail.label == "Address" %}
+                                    <h3>
+                                        <a 
+                                            href="https://www.google.com/maps/search/?api=1&query=33+Kelly+Road+Jet+Park+Boksburg"
+                                            target="_blank"
+                                            rel="noopener noreferrer">
+                                            {{ detail.value }}
+                                        </a>
+                                    </h3>
+                                {% elif detail.label == "Working Hours" %}
+                                    <h3>Working Hours</h3>
+                                    <ul class="working-hours-list">
+                                        {% for item in detail.hours %}
+                                            <li>
+                                                <strong>{{ item.day }}:</strong> {{ item.time }}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    <h3>{{ detail.value }}</h3>
+                                {% endif %}
+                            </div>
+                            <p>{{ detail.note }}</p>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+            <aside class="aside-note">
+                <span class="eyebrow">Regional Presence</span>
+                <h3>Positioned for national project support.</h3>
+                <ul class="accent-list accent-list--spacious">
+                    {% for item in regional_presence %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <section class="section section--muted">
+        <div class="container split-layout split-layout--balanced">
+            <div>
+                <div class="section-heading section-heading--compact">
+                    <span class="eyebrow">Helpful Enquiry Topics</span>
+                    <h2>Common enquiry areas the RPS team can assist with.</h2>
+                </div>
+            </div>
+            <div>
+                <ul class="accent-list accent-list--spacious">
+                    {% for item in enquiry_topics %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}

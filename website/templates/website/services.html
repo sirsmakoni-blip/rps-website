@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Services | RPS Switchgear SA{% endblock %}
+
+{% block content %}
+    {% include "website/partials/breadcrumbs.html" %}
+
+    <section class="page-hero page-hero--services">
+        <div 
+            class="page-hero__bg-image"
+            style="background-image: url('{{ services_image|default:'/static/img/service.png' }}');">
+        </div>
+
+        <div class="container page-hero__grid">
+            <div class="hero-text-box">
+                <span class="eyebrow">Services</span>
+                <h1>Engineering, construction, testing, and infrastructure services for electrical projects.</h1>
+            </div>
+
+            <div class="hero-text-box hero-text-box--light">
+                <p class="page-hero__lead">
+                    RPS Switchgear SA provides services across renewable energy, engineering and professional support, plant construction, substation construction and upgrades, maintenance, protection relay testing, and township/rural electrification implementation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="divider-list">
+                {% for service in services %}
+                    <article class="divider-item divider-item--wide">
+                        <div class="divider-item__header">
+                            <span class="divider-item__label">{{ service.category }}</span>
+                            <h2><a href="{% url 'website:service_detail' service.slug %}">{{ service.name }}</a></h2>
+                        </div>
+                        <p>{{ service.summary }}</p>
+                        <div class="split-meta">
+                            <ul class="pill-list">
+                                {% for item in service.fit %}
+                                    <li>{{ item }}</li>
+                                {% endfor %}
+                            </ul>
+                            <a class="text-link" href="{% url 'website:service_detail' service.slug %}">Open service detail</a>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--muted">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Approach</span>
+                <h2>A service model that supports projects from planning to post-commissioning.</h2>
+                <p>The service model supports projects from planning and technical definition through to construction, installation, testing, commissioning, and long-term asset support.</p>
+            </div>
+            <div class="matrix">
+                {% for item in service_approach %}
+                    <article class="matrix__item">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.text }}</p>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Projects | RPS Switchgear SA{% endblock %}
+
+{% block content %}
+    {% include "website/partials/breadcrumbs.html" %}
+
+    <section class="page-hero page-hero--projects">
+        <div 
+            class="page-hero__bg-image"
+            style="background-image: url('{{ projects_image|default:'/static/img/projects.png' }}');">
+        </div>
+
+        <div class="container page-hero__grid">
+            <div class="hero-text-box">
+                <span class="eyebrow">Projects</span>
+                <h1>Recent electrical infrastructure, retrofit, and renewable energy projects.</h1>
+            </div>
+
+            <div class="hero-text-box hero-text-box--light">
+                <p class="page-hero__lead">
+                    Explore selected RPS Switchgear SA project work across switchgear retrofits, substation upgrades, MV reticulation, renewable energy, and electrical infrastructure delivery.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-heading section-heading--compact">
+                <span class="eyebrow">Latest Projects</span>
+                <h2>Showing only latest 5 projects.</h2>
+            </div>
+
+            <div class="divider-list">
+                {% for project in projects|slice:":5" %}
+                    <article class="divider-item divider-item--wide project-list-item">
+                        <div
+                            class="project-card-image"
+                            style="background-image: url('{{ project.image|default:'/static/img/projects.png' }}');">
+                        </div>
+
+                        <div class="project-list-item__content">
+                            <div class="divider-item__header">
+                                <span class="divider-item__label">{{ project.sector }}</span>
+                                <h2>{{ project.title }}</h2>
+                            </div>
+
+                            <p>{{ project.summary }}</p>
+
+                            <ul class="pill-list">
+                                {% for item in project.deliverables %}
+                                    <li>{{ item }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--muted">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Delivery Priorities</span>
+                <h2>Delivery priorities that support dependable electrical outcomes.</h2>
+                <p>RPS project delivery is focused on practical engineering, site execution, commissioning readiness, and maintainable electrical infrastructure outcomes.</p>
+            </div>
+            <div class="matrix">
+                {% for item in project_priorities %}
+                    <article class="matrix__item">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.text }}</p>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

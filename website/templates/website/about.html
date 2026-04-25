@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}About | RPS Switchgear SA{% endblock %}
+
+{% block content %}
+    {% include "website/partials/breadcrumbs.html" %}
+
+    <section class="page-hero page-hero--about">
+        <div 
+            class="page-hero__bg-image"
+            style="background-image: url('{{ about_image|default:'/static/img/abut.png' }}');">
+        </div>
+
+        <div class="container page-hero__grid">
+            <div class="hero-text-box">
+                <span class="eyebrow">About RPS</span>
+                <h1>Electrical engineering capability built for dependable project delivery since 2008.</h1>
+            </div>
+
+            <div class="hero-text-box hero-text-box--light">
+                <p class="page-hero__lead">
+                    {{ about_intro }}
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container split-layout split-layout--balanced">
+            <div class="content-stack">
+                <div class="section-heading section-heading--compact">
+                    <span class="eyebrow">Company Profile</span>
+                    <h2>Established electrical engineering support for critical infrastructure.</h2>
+                </div>
+                <p>Established in 2008, RPS Switchgear SA provides electrical engineering solutions across switchgear, retrofit work, low voltage assemblies, substations, renewable energy, construction, maintenance, and electrification projects.</p>
+                <p>The company supports industrial, utility, municipal, mining, infrastructure, and energy-sector clients with practical engineering, installation, commissioning, upgrade, and maintenance capability.</p>
+            </div>
+            <aside class="aside-note">
+                <span class="eyebrow">Project Support</span>
+                <h3>Engineering-led project support.</h3>
+                <p>RPS combines product supply, technical support, field execution, and lifecycle maintenance for electrical infrastructure projects in South Africa and the broader region.</p>
+            </aside>
+        </div>
+    </section>
+
+    <section class="section section--muted">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">How We Work</span>
+                <h2>A simple delivery model built for clarity and reliability.</h2>
+                <p>RPS follows a practical delivery model from project definition and engineering through installation, testing, commissioning, and long-term support.</p>
+            </div>
+            <div class="number-list">
+                {% for item in delivery_model %}
+                    <article class="number-list__item">
+                        <span class="number-list__step">{{ item.step }}</span>
+                        <div>
+                            <h3>{{ item.title }}</h3>
+                            <p>{{ item.text }}</p>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Business Values</span>
+                <h2>Professional standards shaped around long-term asset performance.</h2>
+                <p>RPS focuses on engineering quality, dependable execution, and long-term asset performance across demanding electrical environments.</p>
+            </div>
+            <div class="matrix">
+                {% for value in about_values %}
+                    <article class="matrix__item">
+                        <h3>{{ value.title }}</h3>
+                        <p>{{ value.text }}</p>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--muted">
+        <div class="container split-layout split-layout--balanced">
+            <div>
+                <div class="section-heading section-heading--compact">
+                    <span class="eyebrow">Sector Reach</span>
+                    <h2>Aligned to the environments where dependable power matters most.</h2>
+                    <p>RPS works across sectors where reliable electrical infrastructure, upgrade capability, and lifecycle maintenance support are essential.</p>
+                </div>
+            </div>
+            <div class="plain-list">
+                {% for sector in sector_focus %}
+                    <div class="plain-list__item">
+                        <span class="plain-list__rule" aria-hidden="true"></span>
+                        <p>{{ sector }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

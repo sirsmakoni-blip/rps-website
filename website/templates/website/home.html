@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+
+{% block title %}RPS Switchgear SA | Electrical Engineering & Switchgear Solutions{% endblock %}
+
+{% block content %}
+    <section class="hero hero--home">
+        <div class="container hero__grid">
+            <div class="hero__content">
+                <span class="eyebrow">Industrial-Corporate Power Delivery</span>
+                <h1>Engineered switchgear and electrical infrastructure for high-consequence environments.</h1>
+                <p class="hero__lead">RPS Switchgear SA supports industrial, utility, infrastructure, and energy-sector clients with practical electrical solutions built around reliability, maintainability, and disciplined execution.</p>
+                <div class="hero__actions">
+                    <a class="button button--primary" href="{% url 'website:products' %}">Explore Products</a>
+                    <a class="button button--secondary" href="{% url 'website:services' %}">View Services</a>
+                </div>
+            </div>
+            <div class="hero__visual" aria-hidden="true">
+                <div class="technical-panel">
+                    <div class="technical-panel__top">
+                        <span>Switchgear Systems</span>
+                        <span>South Africa</span>
+                    </div>
+                    <div class="technical-panel__grid">
+                        <div class="technical-panel__item">
+                            <strong>MV Protection</strong>
+                            <p>Operational safety, relay integration, and dependable feeder control.</p>
+                        </div>
+                        <div class="technical-panel__item">
+                            <strong>Brownfield Upgrades</strong>
+                            <p>Lifecycle-minded retrofit solutions for ageing assets and live plant.</p>
+                        </div>
+                        <div class="technical-panel__item">
+                            <strong>Infrastructure Delivery</strong>
+                            <p>Substations, plant construction, and commissioning-aware project execution.</p>
+                        </div>
+                        <div class="technical-panel__item">
+                            <strong>Energy Transition</strong>
+                            <p>Renewable and hybrid project support with clean electrical interfaces.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--tight-top">
+        <div class="container">
+            <div class="stat-strip">
+                {% for fact in company_facts %}
+                    <div class="stat-item">
+                        <strong>{{ fact.value }}</strong>
+                        <span>{{ fact.label }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Why RPS</span>
+                <h2>A focused electrical business with practical project discipline.</h2>
+                <p>From switchgear supply to field delivery, RPS Switchgear SA supports clients with engineering, construction, testing, retrofit, and long-term asset support.</p>
+            </div>
+            <div class="matrix">
+                {% for item in why_rps %}
+                    <article class="matrix__item">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.text }}</p>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--split-bg">
+    <div class="container section__split">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Product Platforms</span>
+                <h2>Core switchgear and retrofit solutions.</h2>
+                <p>Explore core RPS solutions across medium voltage switchgear, retrofit work, and low voltage assemblies for dependable electrical infrastructure.</p>
+            </div>
+            <div class="divider-list">
+                {% for product in featured_products %}
+                    <article class="divider-item">
+                        <div class="divider-item__header">
+                            <span class="divider-item__label">{{ product.category }}</span>
+                            <h3><a href="{% url 'website:product_detail' product.slug %}">{{ product.name }}</a></h3>
+                        </div>
+                        <p>{{ product.summary }}</p>
+                        <ul class="pill-list">
+                            {% for point in product.highlights|slice:":2" %}
+                                <li>{{ point }}</li>
+                            {% endfor %}
+                        </ul>
+                        <a class="text-link" href="{% url 'website:product_detail' product.slug %}">View product details</a>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--split-left">
+        <div class="section__split-left">
+
+            <!-- LEFT IMAGE -->
+            <div class="section__image"></div>
+
+            <!-- RIGHT CONTENT -->
+            <div class="section__content">
+                <div class="section-heading">
+                    <span class="eyebrow">Service Capability</span>
+                    <h2>Execution support across the electrical project lifecycle.</h2>
+                    <p>RPS services cover planning, engineering, construction, testing, commissioning, and ongoing support for electrical infrastructure projects.</p>
+                </div>
+
+                <div class="divider-list divider-list--compact">
+                    {% for service in featured_services %}
+                        <article class="divider-item">
+                            <div class="divider-item__header">
+                                <span class="divider-item__label">{{ service.category }}</span>
+                                <h3>
+                                    <a href="{% url 'website:service_detail' service.slug %}">
+                                        {{ service.name }}
+                                    </a>
+                                </h3>
+                            </div>
+                            <p>{{ service.summary }}</p>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--muted">
+        <div class="container split-layout split-layout--balanced">
+            <div>
+                <div class="section-heading section-heading--compact">
+                    <span class="eyebrow">Sectors</span>
+                    <h2>Structured for South African industrial and infrastructure work.</h2>
+                    <p>RPS works across South African industrial, municipal, utility, mining, renewable energy, and infrastructure environments.</p>
+                </div>
+            </div>
+            <div class="plain-list">
+                {% for sector in sector_focus %}
+                    <div class="plain-list__item">
+                        <span class="plain-list__rule" aria-hidden="true"></span>
+                        <p>{{ sector }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Projects</span>
+                <h2>Representative delivery themes aligned to RPS capability.</h2>
+                <p>Selected projects reflect RPS delivery across retrofit, substations, MV reticulation, renewable energy, and electrification work.</p>
+            </div>
+            <div class="divider-list">
+                {% for project in projects_preview %}
+                    <article class="divider-item">
+                        <div class="divider-item__header">
+                            <span class="divider-item__label">{{ project.sector }}</span>
+                            <h3>{{ project.title }}</h3>
+                        </div>
+                        <p>{{ project.summary }}</p>
+                        <ul class="pill-list">
+                            {% for deliverable in project.deliverables %}
+                                <li>{{ deliverable }}</li>
+                            {% endfor %}
+                        </ul>
+                    </article>
+                {% endfor %}
+            </div>
+            <div class="section-actions">
+                <a class="text-link" href="{% url 'website:projects' %}">See recent RPS projects</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

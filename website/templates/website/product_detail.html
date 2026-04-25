@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}{{ product.name }} | RPS Switchgear SA{% endblock %}
+
+{% block content %}
+    {% include "website/partials/breadcrumbs.html" %}
+
+    <section class="page-hero page-hero--product-detail">
+        <div
+            class="page-hero__bg-image"
+            style="background-image: url('{{ product.image|default:'/static/images/products/product-placeholder.jpg' }}');"
+            aria-hidden="true">
+        </div>
+
+        <div class="container page-hero__grid">
+            <div class="hero-text-box">
+                <span class="eyebrow">{{ product.category }}</span>
+                <h1>{{ product.name }}</h1>
+            </div>
+
+            <div class="hero-text-box hero-text-box--light">
+                <p class="page-hero__lead">{{ product.summary }}</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container detail-layout">
+            <div class="detail-main">
+                <div class="section-heading section-heading--compact">
+                    <span class="eyebrow">Overview</span>
+                    <h2>Positioned for reliable performance and practical field use.</h2>
+                </div>
+
+                <p>{{ product.intro }}</p>
+                <p>{{ product.overview }}</p>
+
+                <div class="detail-columns">
+                    <div>
+                        <h3>Key Highlights</h3>
+                        <ul class="accent-list">
+                            {% for item in product.highlights %}
+                                <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3>Typical Applications</h3>
+                        <ul class="accent-list">
+                            {% for item in product.applications %}
+                                <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="detail-sidebar">
+                <div class="data-points">
+                    {% for item in product.meta %}
+                        <div class="data-point">
+                            <span class="data-point__label">{{ item.label }}</span>
+                            <strong>{{ item.value }}</strong>
+                        </div>
+                    {% endfor %}
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <section class="section section--muted">
+        <div class="container split-layout split-layout--balanced">
+            <div>
+                <div class="section-heading section-heading--compact">
+                    <span class="eyebrow">Support Scope</span>
+                    <h2>Integrated with planning, delivery, and lifecycle support.</h2>
+                </div>
+            </div>
+
+            <div>
+                <ul class="accent-list accent-list--spacious">
+                    {% for item in product.support %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-heading section-heading--compact">
+                <span class="eyebrow">Related Products</span>
+                <h2>Explore adjacent solutions.</h2>
+            </div>
+
+            <div class="related-links">
+                {% for item in related_products %}
+                    <a class="related-links__item" href="{% url 'website:product_detail' item.slug %}">
+                        <span class="related-links__label">{{ item.category }}</span>
+                        <strong>{{ item.name }}</strong>
+                        <span>{{ item.summary }}</span>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

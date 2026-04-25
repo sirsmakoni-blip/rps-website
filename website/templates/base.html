@@ -1,0 +1,130 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}RPS Switchgear SA{% endblock %}</title>
+    <meta
+        name="description"
+        content="{% block meta_description %}RPS Switchgear SA delivers electrical engineering, switchgear, substations, maintenance, retrofit, renewable energy, and electrification solutions from Jet Park, Johannesburg.{% endblock %}"
+    >
+    <link rel="stylesheet" href="{% static 'css/website.css' %}">
+    <script src="{% static 'js/website.js' %}" defer></script>
+</head>
+<body>
+    <header class="site-header" data-site-header>
+        <div class="site-header__bar">
+            <div class="container site-header__bar-inner">
+                <p>Electrical engineering, switchgear, and infrastructure solutions for industrial, municipal, utility, and energy environments.</p>
+                <a href="{% url 'website:contact' %}">Contact the team</a>
+            </div>
+        </div>
+
+        <div class="site-header__main">
+            <div class="container site-header__main-inner">
+                <a class="brand" href="{% url 'website:home' %}" aria-label="RPS Switchgear SA home">
+                    <a class="brand" href="{% url 'website:home' %}">
+                        <img src="{% static 'img/logo.png' %}" alt="RPS Switchgear SA logo" class="brand__logo">
+                    </a>
+                    <span class="brand__text">
+                        <strong>RPS Switchgear SA</strong>
+                        <small>Established 2008</small>
+                    </span>
+                </a>
+
+                <button
+                    class="nav-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="site-navigation"
+                    data-nav-toggle
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span class="nav-toggle__label">Menu</span>
+                </button>
+
+                <nav class="site-nav" id="site-navigation" data-site-nav aria-label="Primary navigation">
+                    <a href="{% url 'website:home' %}" class="{% if active_page == 'home' %}is-active{% endif %}">Home</a>
+                    <a href="{% url 'website:about' %}" class="{% if active_page == 'about' %}is-active{% endif %}">About</a>
+                    <a href="{% url 'website:products' %}" class="{% if active_page == 'products' %}is-active{% endif %}">Products</a>
+                    <a href="{% url 'website:services' %}" class="{% if active_page == 'services' %}is-active{% endif %}">Services</a>
+                    <a href="{% url 'website:projects' %}" class="{% if active_page == 'projects' %}is-active{% endif %}">Projects</a>
+                    <a href="{% url 'website:contact' %}" class="{% if active_page == 'contact' %}is-active{% endif %}">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% if cta %}
+        {% include "website/partials/cta.html" %}
+    {% endif %}
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-block footer-block--brand">
+                <a class="brand brand--footer" href="{% url 'website:home' %}">
+                    <a class="brand" href="{% url 'website:home' %}">
+                        <img src="{% static 'img/logo.png' %}" alt="RPS Switchgear SA logo" class="brand__logo">
+                    </a>
+                    <span class="brand__text">
+                        <strong>RPS Switchgear SA</strong>
+                        <small>Electrical Engineering & Switchgear</small>
+                    </span>
+                </a>
+                <p class="footer-copy">
+                    RPS Switchgear SA (Pty) Ltd is a multi faceted engineering company established in 2008,
+                    providing switchgear, electrical engineering, construction, maintenance, retrofit,
+                    renewable energy, and electrification solutions.
+                </p>
+            </div>
+
+            <div class="footer-block">
+                <h2>Navigate</h2>
+                <ul class="footer-list">
+                    <li><a href="{% url 'website:home' %}">Home</a></li>
+                    <li><a href="{% url 'website:about' %}">About</a></li>
+                    <li><a href="{% url 'website:products' %}">Products</a></li>
+                    <li><a href="{% url 'website:services' %}">Services</a></li>
+                    <li><a href="{% url 'website:projects' %}">Projects</a></li>
+                    <li><a href="{% url 'website:contact' %}">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-block">
+                <h2>Core Solutions</h2>
+                <ul class="footer-list">
+                    {% for product in footer_products %}
+                        <li>
+                            <a href="{% url 'website:product_detail' product.slug %}">{{ product.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="footer-block">
+                <h2>Contact</h2>
+                <ul class="footer-list footer-list--compact">
+                    {% for detail in contact_details|slice:":4" %}
+                        <li>
+                            <span class="footer-label">{{ detail.label }}</span>
+                            <span>{{ detail.value }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>33 Kelly Road, Unit 4 Meerzicht Business Park, Jet Park, 1459, Johannesburg | +27 11 392 1640 | sales@rpsswitchgearsa.co.za</p>
+            <p>&copy; {% now "Y" %} RPS Switchgear SA. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<section class="site-cta">
+    <div class="container">
+        <div class="site-cta__inner">
+            <div class="section-heading section-heading--compact">
+                <span class="eyebrow">{{ cta.eyebrow }}</span>
+                <h2>{{ cta.title }}</h2>
+                <p>{{ cta.text }}</p>
+            </div>
+            <div class="site-cta__actions">
+                <a class="button button--primary" href="{{ cta.primary_url }}">{{ cta.primary_label }}</a>
+                {% if cta.secondary_url and cta.secondary_label %}
+                    <a class="button button--secondary" href="{{ cta.secondary_url }}">{{ cta.secondary_label }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

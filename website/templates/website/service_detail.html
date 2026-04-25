@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}{{ service.name }} | RPS Switchgear SA{% endblock %}
+
+{% block content %}
+    {% include "website/partials/breadcrumbs.html" %}
+
+    <section class="page-hero page-hero--service-detail">
+        <div
+            class="page-hero__bg-image"
+            style="background-image: url('{{ service.image|default:'/static/images/services/service-placeholder.jpg' }}');"
+            aria-hidden="true">
+        </div>
+
+        <div class="container page-hero__grid">
+            <div class="hero-text-box">
+                <span class="eyebrow">{{ service.category }}</span>
+                <h1>{{ service.name }}</h1>
+            </div>
+
+            <div class="hero-text-box hero-text-box--light">
+                <p class="page-hero__lead">{{ service.summary }}</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container detail-layout">
+            <div class="detail-main">
+                <div class="section-heading section-heading--compact">
+                    <span class="eyebrow">Service Overview</span>
+                    <h2>Built for projects that need technical structure and field readiness.</h2>
+                </div>
+                <p>{{ service.intro }}</p>
+                <p>{{ service.overview }}</p>
+
+                <div class="detail-columns">
+                    <div>
+                        <h3>Scope Includes</h3>
+                        <ul class="accent-list">
+                            {% for item in service.scope %}
+                                <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Best Fit</h3>
+                        <ul class="accent-list">
+                            {% for item in service.fit %}
+                                <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <aside class="detail-sidebar">
+                <div class="data-points">
+                    {% for item in service.meta %}
+                        <div class="data-point">
+                            <span class="data-point__label">{{ item.label }}</span>
+                            <strong>{{ item.value }}</strong>
+                        </div>
+                    {% endfor %}
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <section class="section section--muted">
+        <div class="container split-layout split-layout--balanced">
+            <div>
+                <div class="section-heading section-heading--compact">
+                    <span class="eyebrow">Expected Outcomes</span>
+                    <h2>Designed to produce more orderly electrical delivery.</h2>
+                </div>
+            </div>
+            <div>
+                <ul class="accent-list accent-list--spacious">
+                    {% for item in service.outcomes %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-heading section-heading--compact">
+                <span class="eyebrow">Related Services</span>
+                <h2>Explore adjacent capabilities.</h2>
+            </div>
+            <div class="related-links">
+                {% for item in related_services %}
+                    <a class="related-links__item" href="{% url 'website:service_detail' item.slug %}">
+                        <span class="related-links__label">{{ item.category }}</span>
+                        <strong>{{ item.name }}</strong>
+                        <span>{{ item.summary }}</span>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}Products | RPS Switchgear SA{% endblock %}
+
+{% block content %}
+    {% include "website/partials/breadcrumbs.html" %}
+
+    <section class="page-hero page-hero--products">
+        <div class="page-hero__bg-image" aria-hidden="true"></div>
+
+        <div class="container page-hero__grid">
+            <div class="hero-text-box">
+                <span class="eyebrow">Products</span>
+                <h1>Switchgear and retrofit solutions for dependable electrical infrastructure.</h1>
+            </div>
+
+            <div class="hero-text-box hero-text-box--light">
+                <p class="page-hero__lead">
+                    Explore RPS Switchgear SA’s core product range, including Assure HMVP Switchgear, RPS LMVP Switchgear, Reyrolle retrofit solutions, and low voltage switchboard assemblies for dependable electrical infrastructure.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="divider-list">
+                {% for product in products %}
+                    <article class="divider-item divider-item--wide">
+                        <div class="divider-item__header">
+                            <span class="divider-item__label">{{ product.category }}</span>
+                            <h2>
+                                <a href="{% url 'website:product_detail' product.slug %}">
+                                    {{ product.name }}
+                                </a>
+                            </h2>
+                        </div>
+
+                        <p>{{ product.summary }}</p>
+
+                        <div class="split-meta">
+                            <ul class="pill-list">
+                                {% for item in product.applications %}
+                                    <li>{{ item }}</li>
+                                {% endfor %}
+                            </ul>
+
+                            <a class="text-link" href="{% url 'website:product_detail' product.slug %}">
+                                Open detail page
+                            </a>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--muted">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Lifecycle Support</span>
+                <h2>A product strategy that extends beyond initial supply.</h2>
+                <p>
+                    RPS supports electrical assets across new installations, brownfield upgrades, retrofit work, testing, maintenance, and long-term operational support.
+                </p>
+            </div>
+
+            <div class="matrix">
+                {% for stage in lifecycle_stages %}
+                    <article class="matrix__item">
+                        <h3>{{ stage.title }}</h3>
+                        <p>{{ stage.text }}</p>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
