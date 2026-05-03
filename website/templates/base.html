@@ -9,6 +9,7 @@
         name="description"
         content="{% block meta_description %}RPS Switchgear SA delivers electrical engineering, switchgear, substations, maintenance, retrofit, renewable energy, and electrification solutions from Jet Park, Johannesburg.{% endblock %}"
     >
+    {% block extra_head %}{% endblock %}
     <link rel="stylesheet" href="{% static 'css/website.css' %}">
     <script src="{% static 'js/website.js' %}" defer></script>
 </head>
@@ -24,7 +25,13 @@
         <div class="site-header__main">
             <div class="container site-header__main-inner">
                 <a class="brand" href="{% url 'website:home' %}" aria-label="RPS Switchgear SA home">
-                    <img src="{% static 'img/logo.png' %}" alt="RPS Switchgear SA logo" class="brand__logo">
+                    <img
+                        src="{% static 'img/logo.webp' %}"
+                        alt="RPS Switchgear SA logo"
+                        class="brand__logo"
+                        width="960"
+                        height="384"
+                        decoding="async">
                     <span class="brand__text">
                         <strong>RPS Switchgear SA</strong>
                         <small>Established 2008</small>
@@ -68,7 +75,14 @@
         <div class="container footer-grid">
             <div class="footer-block footer-block--brand">
                 <a class="brand brand--footer" href="{% url 'website:home' %}">
-                    <img src="{% static 'img/logo.png' %}" alt="RPS Switchgear SA logo" class="brand__logo">
+                    <img
+                        src="{% static 'img/logo.webp' %}"
+                        alt="RPS Switchgear SA logo"
+                        class="brand__logo"
+                        width="960"
+                        height="384"
+                        decoding="async"
+                        loading="lazy">
                     <span class="brand__text">
                         <strong>RPS Switchgear SA</strong>
                         <small>Electrical Engineering & Switchgear</small>

@@ -1,6 +1,18 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}RPS Switchgear SA | Electrical Engineering & Switchgear Solutions{% endblock %}
+
+{% block extra_head %}
+    <link
+        rel="preload"
+        as="image"
+        href="{% static 'img/hero_solar.webp' %}"
+        imagesrcset="{% static 'img/hero_solar-mobile.webp' %} 900w, {% static 'img/hero_solar.webp' %} 1600w"
+        imagesizes="100vw"
+        type="image/webp"
+        fetchpriority="high">
+{% endblock %}
 
 {% block content %}
     <section class="hero hero--home">

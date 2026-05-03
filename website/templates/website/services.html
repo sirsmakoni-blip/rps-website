@@ -8,7 +8,10 @@
     <section class="page-hero page-hero--services">
         <div 
             class="page-hero__bg-image"
-            style="background-image: url('{{ services_image|default:'/static/img/service.png' }}');"
+            style="
+                --page-hero-image: url('{{ services_image|default:'/static/img/service.webp' }}');
+                --page-hero-image-mobile: url('{{ services_image_mobile|default:'/static/img/service-mobile.webp' }}');
+            "
             aria-hidden="true">
         </div>
 

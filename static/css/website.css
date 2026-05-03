@@ -374,14 +374,17 @@ ul {
 
 .hero--home {
     min-height: 75vh;
-    background:
+    background-image:
         linear-gradient(
             to right,
             rgba(0, 0, 80, 0.45) 0%,
             rgba(0, 0, 80, 0.32) 50%,
             rgba(0, 0, 80, 0.15) 100%
         ),
-        url('/static/img/hero_solar.png') center/cover no-repeat;
+        url('/static/img/hero_solar.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
 }
@@ -514,6 +517,8 @@ ul {
     position: relative;
     overflow: hidden;
     background: var(--surface-muted);
+    --split-right-image: url('/static/img/slide_3.webp');
+    --split-right-image-mobile: url('/static/img/slide_3-mobile.webp');
 }
 
 .section__split {
@@ -538,8 +543,10 @@ ul {
     right: 0;
     width: 50%;
     height: 100%;
-
-    background: url('/static/img/slide_3.png') center/cover no-repeat;
+    background-image: var(--split-right-image);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 
@@ -570,6 +577,8 @@ ul {
     background: rgba(255, 255, 255, 0.8);
     position: relative;
     overflow: hidden;
+    --split-left-image: url('/static/img/solar_1.webp');
+    --split-left-image-mobile: url('/static/img/solar_1-mobile.webp');
 }
 
 .section__split-left {
@@ -580,7 +589,10 @@ ul {
 
 /* LEFT IMAGE */
 .section__image {
-    background: url('/static/img/solar_1.png') center/cover no-repeat;
+    background-image: var(--split-left-image);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* RIGHT CONTENT */
@@ -631,6 +643,11 @@ ul {
     overflow: hidden;
 }
 
+.page-hero--products {
+    --page-hero-image: url('/static/img/slide_2.webp');
+    --page-hero-image-mobile: url('/static/img/slide_2-mobile.webp');
+}
+
 .page-hero--products .page-hero__grid,
 .page-hero--services .page-hero__grid,
 .page-hero--projects .page-hero__grid,
@@ -646,7 +663,10 @@ ul {
 .page-hero__bg-image {
     position: absolute;
     inset: 0;
-    background: url('/static/img/slide_2.png') right center / contain no-repeat;
+    background-image: var(--page-hero-image, url('/static/img/slide_2.webp'));
+    background-position: right center;
+    background-size: contain;
+    background-repeat: no-repeat;
     opacity: 1;
 }
 
@@ -1180,6 +1200,20 @@ ul {
         overflow-x: hidden;
     }
 
+    .hero--home {
+        background-image:
+            linear-gradient(
+                to right,
+                rgba(0, 0, 80, 0.45) 0%,
+                rgba(0, 0, 80, 0.32) 50%,
+                rgba(0, 0, 80, 0.15) 100%
+            ),
+            image-set(
+                url('/static/img/hero_solar-mobile.webp') 1x,
+                url('/static/img/hero_solar.webp') 2x
+            );
+    }
+
     .page-hero--products .page-hero__grid,
     .page-hero--services .page-hero__grid,
     .page-hero--projects .page-hero__grid,
@@ -1197,6 +1231,7 @@ ul {
         left: 0;
         right: 0;
         width: 100%;
+        background-image: var(--page-hero-image-mobile, var(--page-hero-image, url('/static/img/slide_2-mobile.webp')));
         background-position: center;
         background-size: cover;
         opacity: 0.2;
@@ -1232,6 +1267,7 @@ ul {
 
     .section--split-bg::after {
         width: 100%;
+        background-image: var(--split-right-image-mobile);
         opacity: 0.16;
     }
 
@@ -1246,6 +1282,10 @@ ul {
     .section__image,
     .project-card-image {
         min-height: 260px;
+    }
+
+    .section__image {
+        background-image: var(--split-left-image-mobile);
     }
 
     .site-cta__inner,

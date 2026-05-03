@@ -8,7 +8,10 @@
     <section class="page-hero page-hero--contact">
         <div 
             class="page-hero__bg-image"
-            style="background-image: url('{{ contact_image|default:'/static/img/contact.png' }}');"
+            style="
+                --page-hero-image: url('{{ contact_image|default:'/static/img/contact.webp' }}');
+                --page-hero-image-mobile: url('{{ contact_image_mobile|default:'/static/img/contact-mobile.webp' }}');
+            "
             aria-hidden="true">
         </div>
 

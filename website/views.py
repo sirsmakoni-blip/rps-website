@@ -213,7 +213,7 @@ PRODUCTS = [
         "slug": "assure-hmvp-switchgear",
         "name": "Assure HMVP Switchgear",
         "category": "Medium voltage switchgear",
-        "image": "/static/img/assure-hmvp-switchgear.png",
+        "image": "/static/img/assure-hmvp-switchgear.webp",
         "summary": "RPS Assure HMVP Switchgear for medium voltage applications.",
         "intro": "Assure HMVP Switchgear supports medium voltage distribution, control, and protection requirements across electrical infrastructure projects.",
         "overview": (
@@ -245,7 +245,7 @@ PRODUCTS = [
         "slug": "lmvp-switchgear",
         "name": "RPS LMVP Switchgear",
         "category": "LMVP switchgear",
-        "image": "/static/img/lvmp.png",
+        "image": "/static/img/lvmp.webp",
         "summary": "RPS LMVP Switchgear for electrical distribution applications.",
         "intro": "RPS LMVP Switchgear supports electrical distribution requirements across industrial, municipal, and infrastructure applications.",
         "overview": (
@@ -277,7 +277,7 @@ PRODUCTS = [
         "slug": "reyrolle-retrofit-solutions",
         "name": "Reyrolle Switchgear Retrofit Solutions",
         "category": "Retrofit solutions",
-        "image": "/static/img/retrofit.png",
+        "image": "/static/img/retrofit.webp",
         "summary": "Retrofit solutions for legacy Reyrolle switchgear installations.",
         "intro": "Reyrolle Switchgear Retrofit Solutions support brownfield upgrade work on existing Reyrolle installations requiring life extension and modernisation.",
         "overview": (
@@ -309,7 +309,7 @@ PRODUCTS = [
         "slug": "low-voltage-switchboard-assemblies",
         "name": "Low Voltage Switchboard Assemblies",
         "category": "LV switchboards",
-        "image": "/static/img/lv_solutions.png",
+        "image": "/static/img/lv_solutions.webp",
         "summary": "Low voltage switchboard assemblies including MCCs, distribution boards, containerised solutions, MV switchrooms, and LV E-Rooms.",
         "intro": "Low Voltage Switchboard Assemblies support distribution, motor control, and packaged electrical infrastructure requirements across project environments.",
         "overview": (
@@ -344,7 +344,7 @@ SERVICES = [
         "slug": "renewable-energy-solutions",
         "name": "Renewable Energy Solutions",
         "category": "Energy infrastructure",
-        "image": "/static/img/assure-hmvp-switchgear.png",
+        "image": "/static/img/assure-hmvp-switchgear.webp",
         "summary": "Renewable energy solutions for generation, integration, and supporting electrical infrastructure.",
         "intro": "Renewable Energy Solutions support projects that require practical electrical engineering, installation, and commissioning capability.",
         "overview": (
@@ -376,7 +376,7 @@ SERVICES = [
         "slug": "engineering-and-professional-services",
         "name": "Engineering & Professional Services",
         "category": "Technical support",
-        "image": "/static/img/assure-hmvp-switchgear.png",
+        "image": "/static/img/assure-hmvp-switchgear.webp",
         "summary": "Engineering and professional services for electrical project planning and delivery.",
         "intro": "Engineering & Professional Services support project planning, technical definition, coordination, and delivery across electrical infrastructure work.",
         "overview": (
@@ -408,7 +408,7 @@ SERVICES = [
         "slug": "plant-construction",
         "name": "Plant Construction Work",
         "category": "Construction delivery",
-        "image": "/static/img/assure-hmvp-switchgear.png",
+        "image": "/static/img/assure-hmvp-switchgear.webp",
         "summary": "Plant construction work for industrial facilities and electrical infrastructure projects.",
         "intro": "Plant Construction Work supports site-based delivery across industrial facilities and related electrical infrastructure packages.",
         "overview": (
@@ -440,7 +440,7 @@ SERVICES = [
         "slug": "substation-construction-and-upgrades",
         "name": "Substation Construction & Upgrade",
         "category": "Substation delivery",
-        "image": "/static/img/assure-hmvp-switchgear.png",
+        "image": "/static/img/assure-hmvp-switchgear.webp",
         "summary": "Substation construction and upgrade work for utility, municipal, and industrial environments.",
         "intro": "Substation Construction & Upgrade supports utility, municipal, industrial, and infrastructure projects requiring new build or brownfield substation work.",
         "overview": (
@@ -472,7 +472,7 @@ SERVICES = [
         "slug": "maintenance-and-protection-relay-testing",
         "name": "Maintenance & Protection Relay Testing",
         "category": "Testing and asset care",
-        "image": "/static/img/assure-hmvp-switchgear.png",
+        "image": "/static/img/assure-hmvp-switchgear.webp",
         "summary": "Maintenance and protection relay testing for switchgear and electrical systems.",
         "intro": "Maintenance & Protection Relay Testing supports the reliable performance of switchgear and electrical systems in service.",
         "overview": (
@@ -504,7 +504,7 @@ SERVICES = [
         "slug": "township-and-rural-electrification",
         "name": "Township & Rural Electrification Implementation",
         "category": "Electrification delivery",
-        "image": "/static/img/assure-hmvp-switchgear.png",
+        "image": "/static/img/assure-hmvp-switchgear.webp",
         "summary": "Township and rural electrification implementation for community and public infrastructure projects.",
         "intro": "Township & Rural Electrification Implementation supports network rollout projects that extend access to reliable electrical infrastructure.",
         "overview": (
@@ -538,7 +538,7 @@ PROJECTS = [
     {
         "sector": "Retrofits",
         "title": "BPC - Botswana Power Corporation",
-        "image": "/static/img/switchgear-room.png",
+        "image": "/static/img/switchgear-room.webp",
         "summary": (
             "Retrofitting of a 14-panel switchboard at Selibe Phikwe Substation in Botswana."
         ),
@@ -551,7 +551,7 @@ PROJECTS = [
     {
         "sector": "Retrofits",
         "title": "ZETDC - Zimbabwe",
-        "image": "/static/img/retrofit.png",
+        "image": "/static/img/retrofit.webp",
         "summary": (
             "Retrofitting of a 14-panel switchboard at Mount Hampden Substation in Zimbabwe."
         ),
@@ -564,7 +564,7 @@ PROJECTS = [
     {
         "sector": "Renewable energy",
         "title": "Quton Farms - Bronkhorstspruit, South Africa",
-        "image": "/static/img/solar_1.png",
+        "image": "/static/img/solar_1.webp",
         "summary": (
             "100kW, 200 PV hybrid solar power solution for Quton Farms in Bronkhorstspruit, South Africa."
         ),
@@ -577,7 +577,7 @@ PROJECTS = [
     {
         "sector": "Renewable energy",
         "title": "Clyde Steel Solar Power Plant",
-        "image": "/static/img/clyde.png",
+        "image": "/static/img/clyde.webp",
         "summary": (
             "A 400kW solar power plant project involving design, procurement, installation and commissioning "
             "for a steel manufacturing company in Springs, Gauteng."
@@ -591,7 +591,7 @@ PROJECTS = [
     {
         "sector": "MV reticulation",
         "title": "Greengate MV Electrical Reticulation",
-        "image": "/static/img/greengate.png",
+        "image": "/static/img/greengate.webp",
         "summary": (
             "Design, construction and commissioning of an MV electrical network to supply electricity "
             "to a new development."
@@ -605,7 +605,7 @@ PROJECTS = [
     {
         "sector": "Electrification",
         "title": "Tarlton Matshela Pata Electrification",
-        "image": "/static/img/assure-hmvp-switchgear.png",
+        "image": "/static/img/assure-hmvp-switchgear.webp",
         "summary": (
             "A turnkey electrification project involving design, construction and commissioning of "
             "an electrical network benefiting 1317 families in an informal settlement."
@@ -619,7 +619,7 @@ PROJECTS = [
     {
         "sector": "Substation and switchroom",
         "title": "Tharisa Mine Substation Switchroom",
-        "image": "/static/img/assure-hmvp-switchgear.png",
+        "image": "/static/img/assure-hmvp-switchgear.webp",
         "summary": (
             "Design and construction of a substation switchroom including protection schemes and "
             "installation and commissioning of 12 MV switchgear panels."
@@ -633,7 +633,7 @@ PROJECTS = [
     {
         "sector": "Retrofits",
         "title": "ZETDC Coventry Reyrolle Retrofit",
-        "image": "/static/img/assure-hmvp-switchgear.png",
+        "image": "/static/img/assure-hmvp-switchgear.webp",
         "summary": (
             "Retrofitting of legacy Reyrolle switchgear and protection relay upgrade for ZETDC Coventry."
         ),
@@ -646,7 +646,7 @@ PROJECTS = [
     {
         "sector": "Motor control centres",
         "title": "City of uMhlathuze Municipality Pump Stations MCCs",
-        "image": "/static/img/assure-hmvp-switchgear.png",
+        "image": "/static/img/assure-hmvp-switchgear.webp",
         "summary": (
             "Design, manufacture, installation and commissioning of motor control centres for pump stations, "
             "built in the RPS workshop in Jet Park, Boksburg."
@@ -660,7 +660,7 @@ PROJECTS = [
     {
         "sector": "LV distribution",
         "title": "Wilmar Processing SA Outdoor Distribution Board",
-        "image": "/static/img/assure-hmvp-switchgear.png",
+        "image": "/static/img/assure-hmvp-switchgear.webp",
         "summary": "Design, supply and delivery of a 1600A rated outdoor distribution board for Wilmar Processing SA (Pty) Ltd.",
         "deliverables": [
             "Design",
@@ -671,7 +671,7 @@ PROJECTS = [
     {
         "sector": "Substation upgrade",
         "title": "Gecamines Kolwezi SS Upgrade",
-        "image": "/static/img/assure-hmvp-switchgear.png",
+        "image": "/static/img/assure-hmvp-switchgear.webp",
         "summary": "Manufacture, supply and delivery of 32 panels of 6.6kV 25-kA SBB switchboard to Gecamines Kolwezi Substation, DRC.",
         "deliverables": [
             "Manufacture",
@@ -682,7 +682,7 @@ PROJECTS = [
     {
         "sector": "Substation equipment",
         "title": "Drakenstein Municipality Suid-End Substation",
-        "image": "/static/img/assure-hmvp-switchgear.png",
+        "image": "/static/img/assure-hmvp-switchgear.webp",
         "summary": "Supply, installation and commissioning of 66kV circuit breakers and control panels for Suid-End Substation, Drakenstein.",
         "deliverables": [
             "Supply",
@@ -693,7 +693,7 @@ PROJECTS = [
     {
         "sector": "Solar lighting",
         "title": "Zimbabwe Ezekiel Guti University Solar Street Lights",
-        "image": "/static/img/assure-hmvp-switchgear.png",
+        "image": "/static/img/assure-hmvp-switchgear.webp",
         "summary": "Supply and installation of solar street lights at Zimbabwe Ezekiel Guti University, Zimbabwe.",
         "deliverables": [
             "Supply",
@@ -732,10 +732,13 @@ CONTACT_DETAILS = [
 
 PRODUCT_LOOKUP = {product["slug"]: product for product in PRODUCTS}
 SERVICE_LOOKUP = {service["slug"]: service for service in SERVICES}
-ABOUT_IMAGE = "/static/img/about.png"
-SERVICES_IMAGE = "/static/img/service.png"
-PROJECTS_IMAGE = "/static/img/projects.png"
-CONTACT_IMAGE = "/static/img/contact.png"
+ABOUT_IMAGE = "/static/img/about.webp"
+SERVICES_IMAGE = "/static/img/service.webp"
+SERVICES_IMAGE_MOBILE = "/static/img/service-mobile.webp"
+PROJECTS_IMAGE = "/static/img/projects.webp"
+PROJECTS_IMAGE_MOBILE = "/static/img/projects-mobile.webp"
+CONTACT_IMAGE = "/static/img/contact.webp"
+CONTACT_IMAGE_MOBILE = "/static/img/contact-mobile.webp"
 
 def make_breadcrumbs(*crumbs):
     trail = [{"label": "Home", "url": reverse("website:home")}]
@@ -877,6 +880,7 @@ def services(request):
         services=SERVICES,
         service_approach=SERVICE_APPROACH,
         services_image=SERVICES_IMAGE,
+        services_image_mobile=SERVICES_IMAGE_MOBILE,
         cta=make_cta(
             title="Explore the RPS services offering.",
             text="From engineering support to construction, maintenance, relay testing, renewable energy, and electrification, RPS covers a broad electrical project scope.",
@@ -917,6 +921,7 @@ def projects(request):
         projects=PROJECTS,
         project_priorities=PROJECT_PRIORITIES,
         projects_image=PROJECTS_IMAGE,
+        projects_image_mobile=PROJECTS_IMAGE_MOBILE,
         cta=make_cta(
             title="See how RPS Switchgear SA has delivered across electrification, substations, retrofit, solar, and distribution projects.",
             text="The portfolio includes work in South Africa and the broader region across utility, industrial, mining, and public infrastructure environments.",
@@ -935,6 +940,7 @@ def contact(request):
         enquiry_topics=ENQUIRY_TOPICS,
         regional_presence=REGIONAL_PRESENCE,
         contact_image=CONTACT_IMAGE,
+        contact_image_mobile=CONTACT_IMAGE_MOBILE,
         cta=make_cta(
             title="Get in touch with RPS Switchgear SA.",
             text="Use the contact details on this page to enquire about products, services, and project opportunities.",
