@@ -75,29 +75,30 @@
     </section>
 
     <section class="section section--split-bg">
-    <div class="container section__split">
-        <div class="container">
-            <div class="section-heading">
-                <span class="eyebrow">Product Platforms</span>
-                <h2>Core switchgear and retrofit solutions.</h2>
-                <p>Explore core RPS solutions across medium voltage switchgear, retrofit work, and low voltage assemblies for dependable electrical infrastructure.</p>
-            </div>
-            <div class="divider-list">
-                {% for product in featured_products %}
-                    <article class="divider-item">
-                        <div class="divider-item__header">
-                            <span class="divider-item__label">{{ product.category }}</span>
-                            <h3><a href="{% url 'website:product_detail' product.slug %}">{{ product.name }}</a></h3>
-                        </div>
-                        <p>{{ product.summary }}</p>
-                        <ul class="pill-list">
-                            {% for point in product.highlights|slice:":2" %}
-                                <li>{{ point }}</li>
-                            {% endfor %}
-                        </ul>
-                        <a class="text-link" href="{% url 'website:product_detail' product.slug %}">View product details</a>
-                    </article>
-                {% endfor %}
+        <div class="container section__split">
+            <div class="section__split-content">
+                <div class="section-heading">
+                    <span class="eyebrow">Product Platforms</span>
+                    <h2>Core switchgear and retrofit solutions.</h2>
+                    <p>Explore core RPS solutions across medium voltage switchgear, retrofit work, and low voltage assemblies for dependable electrical infrastructure.</p>
+                </div>
+                <div class="divider-list">
+                    {% for product in featured_products %}
+                        <article class="divider-item">
+                            <div class="divider-item__header">
+                                <span class="divider-item__label">{{ product.category }}</span>
+                                <h3><a href="{% url 'website:product_detail' product.slug %}">{{ product.name }}</a></h3>
+                            </div>
+                            <p>{{ product.summary }}</p>
+                            <ul class="pill-list">
+                                {% for point in product.highlights|slice:":2" %}
+                                    <li>{{ point }}</li>
+                                {% endfor %}
+                            </ul>
+                            <a class="text-link" href="{% url 'website:product_detail' product.slug %}">View product details</a>
+                        </article>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </section>

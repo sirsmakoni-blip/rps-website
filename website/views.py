@@ -178,6 +178,17 @@ ENQUIRY_TOPICS = [
     "Renewable energy and electrification projects",
 ]
 
+CONTACT_ADDRESS = "33 Kelly Road, Unit 4 Meerzicht Business Park, Jet Park, 1459, Johannesburg"
+CONTACT_MAP_URL = "https://www.google.com/maps/search/?api=1&query=33+Kelly+Road+Jet+Park+Boksburg"
+CONTACT_EMAIL = "sales@rpsswitchgearsa.co.za"
+CONTACT_PHONE_DISPLAY = "+27 11 392 1640"
+CONTACT_PHONE_URI = "+27113921640"
+CONTACT_WORKING_HOURS = [
+    {"day": "Mon–Thu", "time": "07:30–16:30"},
+    {"day": "Fri", "time": "07:30–14:30"},
+    {"day": "Weekends", "time": "Closed"},
+]
+
 CLIENTS = [
     "UCL Company",
     "Siemag-Tecberg",
@@ -694,28 +705,28 @@ PROJECTS = [
 CONTACT_DETAILS = [
     {
         "label": "Address",
-        "value": "33 Kelly Road, Unit 4 Meerzicht Business Park, Jet Park, 1459, Johannesburg",
+        "value": CONTACT_ADDRESS,
+        "href": CONTACT_MAP_URL,
+        "external": True,
         "note": "",
     },
     {
         "label": "Email",
-        "value": "sales@rpsswitchgearsa.co.za",
+        "value": CONTACT_EMAIL,
+        "href": f"mailto:{CONTACT_EMAIL}",
         "note": "",
     },
     {
         "label": "Telephone",
-        "value": "+27 11 392 1640",
+        "value": CONTACT_PHONE_DISPLAY,
+        "href": f"tel:{CONTACT_PHONE_URI}",
         "note": "",
     },
     {
         "label": "Working Hours",
         "value": "",
         "note": "",
-        "hours": [
-            {"day": "Monday - Thursday", "time": "07:30 - 16:30"},
-            {"day": "Friday", "time": "07:30 - 14:30"},
-            {"day": "Weekends", "time": "Closed"},
-        ],
+        "hours": CONTACT_WORKING_HOURS,
     },
 ]
 
@@ -755,6 +766,9 @@ def base_context(active_page, **kwargs):
     context = {
         "active_page": active_page,
         "contact_details": CONTACT_DETAILS,
+        "contact_address": CONTACT_ADDRESS,
+        "contact_email": CONTACT_EMAIL,
+        "contact_phone_display": CONTACT_PHONE_DISPLAY,
         "footer_products": PRODUCTS,
         "footer_services": SERVICES[:4],
     }

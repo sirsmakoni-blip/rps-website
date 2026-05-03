@@ -8,7 +8,8 @@
     <section class="page-hero page-hero--contact">
         <div 
             class="page-hero__bg-image"
-            style="background-image: url('{{ contact_image|default:'/static/img/contact.png' }}');">
+            style="background-image: url('{{ contact_image|default:'/static/img/contact.png' }}');"
+            aria-hidden="true">
         </div>
 
         <div class="container page-hero__grid">
@@ -37,28 +38,7 @@
                         <article class="divider-item">
                             <div class="divider-item__header">
                                 <span class="divider-item__label">{{ detail.label }}</span>
-                                {% if detail.label == "Email" %}
-                                    <h3>
-                                        <a href="mailto:{{ detail.value }}">
-                                            {{ detail.value }}
-                                        </a>
-                                    </h3>
-                                {% elif detail.label == "Telephone" %}
-                                    <h3>
-                                        <a href="tel:{{ detail.value|cut:' ' }}">
-                                            {{ detail.value }}
-                                        </a>
-                                    </h3>
-                                {% elif detail.label == "Address" %}
-                                    <h3>
-                                        <a 
-                                            href="https://www.google.com/maps/search/?api=1&query=33+Kelly+Road+Jet+Park+Boksburg"
-                                            target="_blank"
-                                            rel="noopener noreferrer">
-                                            {{ detail.value }}
-                                        </a>
-                                    </h3>
-                                {% elif detail.label == "Working Hours" %}
+                                {% if detail.hours %}
                                     <h3>Working Hours</h3>
                                     <ul class="working-hours-list">
                                         {% for item in detail.hours %}
@@ -67,6 +47,14 @@
                                             </li>
                                         {% endfor %}
                                     </ul>
+                                {% elif detail.href %}
+                                    <h3>
+                                        <a
+                                            href="{{ detail.href }}"
+                                            {% if detail.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                                            {{ detail.value }}
+                                        </a>
+                                    </h3>
                                 {% else %}
                                     <h3>{{ detail.value }}</h3>
                                 {% endif %}

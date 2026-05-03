@@ -24,9 +24,7 @@
         <div class="site-header__main">
             <div class="container site-header__main-inner">
                 <a class="brand" href="{% url 'website:home' %}" aria-label="RPS Switchgear SA home">
-                    <a class="brand" href="{% url 'website:home' %}">
-                        <img src="{% static 'img/logo.png' %}" alt="RPS Switchgear SA logo" class="brand__logo">
-                    </a>
+                    <img src="{% static 'img/logo.png' %}" alt="RPS Switchgear SA logo" class="brand__logo">
                     <span class="brand__text">
                         <strong>RPS Switchgear SA</strong>
                         <small>Established 2008</small>
@@ -70,9 +68,7 @@
         <div class="container footer-grid">
             <div class="footer-block footer-block--brand">
                 <a class="brand brand--footer" href="{% url 'website:home' %}">
-                    <a class="brand" href="{% url 'website:home' %}">
-                        <img src="{% static 'img/logo.png' %}" alt="RPS Switchgear SA logo" class="brand__logo">
-                    </a>
+                    <img src="{% static 'img/logo.png' %}" alt="RPS Switchgear SA logo" class="brand__logo">
                     <span class="brand__text">
                         <strong>RPS Switchgear SA</strong>
                         <small>Electrical Engineering & Switchgear</small>
@@ -114,7 +110,21 @@
                     {% for detail in contact_details|slice:":4" %}
                         <li>
                             <span class="footer-label">{{ detail.label }}</span>
-                            <span>{{ detail.value }}</span>
+                            {% if detail.hours %}
+                                {% for item in detail.hours %}
+                                    <span class="footer-hours-line">
+                                        <strong>{{ item.day }}:</strong> {{ item.time }}
+                                    </span>
+                                {% endfor %}
+                            {% elif detail.href %}
+                                <a
+                                    href="{{ detail.href }}"
+                                    {% if detail.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                                    {{ detail.value }}
+                                </a>
+                            {% else %}
+                                <span>{{ detail.value }}</span>
+                            {% endif %}
                         </li>
                     {% endfor %}
                 </ul>
@@ -122,7 +132,7 @@
         </div>
 
         <div class="container footer-bottom">
-            <p>33 Kelly Road, Unit 4 Meerzicht Business Park, Jet Park, 1459, Johannesburg | +27 11 392 1640 | sales@rpsswitchgearsa.co.za</p>
+            <p>{{ contact_address }} | {{ contact_phone_display }} | {{ contact_email }}</p>
             <p>&copy; {% now "Y" %} RPS Switchgear SA. All rights reserved.</p>
         </div>
     </footer>
