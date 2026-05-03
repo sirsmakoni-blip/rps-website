@@ -38,10 +38,10 @@
                             <span class="divider-item__label">{{ service.category }}</span>
                             <h2><a href="{% url 'website:service_detail' service.slug %}">{{ service.name }}</a></h2>
                         </div>
-                        <p>{{ service.summary }}</p>
+                        <p>{{ service.list_summary|default:service.summary }}</p>
                         <div class="split-meta">
                             <ul class="pill-list">
-                                {% for item in service.fit %}
+                                {% for item in service.list_fit|default:service.fit|slice:":3" %}
                                     <li>{{ item }}</li>
                                 {% endfor %}
                             </ul>

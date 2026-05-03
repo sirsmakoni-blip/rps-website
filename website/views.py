@@ -212,23 +212,26 @@ PRODUCTS = [
     {
         "slug": "assure-hmvp-switchgear",
         "name": "Assure HMVP Switchgear",
-        "category": "Medium voltage switchgear",
+        "category": "Horizontal indoor MV switchgear",
         "image": "/static/img/assure-hmvp-switchgear.webp",
-        "summary": "RPS Assure HMVP Switchgear for medium voltage applications.",
-        "intro": "Assure HMVP Switchgear supports medium voltage distribution, control, and protection requirements across electrical infrastructure projects.",
+        "summary": "IEC-certified horizontal indoor switchgear with a 31.5kA for 1 second A-FLR internal arc rating to IEC 62271.",
+        "intro": "RPS Switchgear's Assure range of Horizontal Indoor Switchgear is fully type tested and certified to international IEC Standards. With an impressive internal arc rating of 31.5kA for 1 second A-FLR to IEC 62271, it will more than satisfy the most demanding of network owners' requirements.",
         "overview": (
-            "This product sits within the company’s MV switchgear product range and forms part of "
-            "its supply capability for industrial, utility, municipal, and infrastructure projects."
+            "As part of the RPS medium voltage range, Assure HMVP is positioned for projects that "
+            "need robust indoor switchgear, proven standards compliance, and dependable performance "
+            "across utility, municipal, mining, and industrial networks."
         ),
         "highlights": [
-            "Part of the RPS medium voltage switchgear offering",
-            "Positioned within the company’s core product range",
-            "Relevant to project supply, installation, testing, and commissioning scopes",
+            "Horizontal Indoor Switchgear",
+            "Fully type tested",
+            "Certified to IEC Standards",
+            "Internal arc rating: 31.5kA for 1 second A-FLR to IEC 62271",
+            "Suitable for demanding network owner requirements",
         ],
         "applications": [
-            "Substations",
-            "Industrial plants",
-            "Municipal and infrastructure power systems",
+            "Utility and municipal substations",
+            "Industrial and mining power systems",
+            "Indoor medium voltage switchrooms",
         ],
         "support": [
             "Engineering support",
@@ -236,31 +239,38 @@ PRODUCTS = [
             "Maintenance and upgrade alignment",
         ],
         "meta": [
-            {"label": "Product type", "value": "MV switchgear"},
-            {"label": "Company category", "value": "Core product family"},
-            {"label": "Project fit", "value": "Supply, installation, and commissioning"},
+            {"label": "Product type", "value": "Horizontal indoor switchgear"},
+            {"label": "Certification", "value": "IEC Standards"},
+            {"label": "Internal arc rating", "value": "31.5kA for 1 second A-FLR to IEC 62271"},
         ],
+        "brochure": "brochures/assure-hmvp-switchgear-brochure.pdf",
+        "brochure_label": "Download Assure HMVP Brochure",
     },
     {
         "slug": "lmvp-switchgear",
         "name": "RPS LMVP Switchgear",
-        "category": "LMVP switchgear",
+        "category": "Medium voltage switchgear",
         "image": "/static/img/lvmp.webp",
-        "summary": "RPS LMVP Switchgear for electrical distribution applications.",
-        "intro": "RPS LMVP Switchgear supports electrical distribution requirements across industrial, municipal, and infrastructure applications.",
+        "summary": "Medium voltage switchgear for network distribution with five breaker current ratings from 630/800A through 2500A.",
+        "intro": "The LMVP switchgear enables the distribution of Electrical Power through Networks to the Consumer at medium voltage. The circuit breakers are available in 5 current ratings, 630/800A, 630A cap switching, 1250A, 2000A and 2500A.",
         "overview": (
-            "The product forms part of the company’s electrical distribution offering and supports "
-            "broader project work in industrial, municipal, and infrastructure environments."
+            "The LMVP range supports medium voltage distribution duties where project teams need "
+            "rating flexibility and a practical switchgear platform for municipal, industrial, "
+            "mining, and infrastructure applications."
         ),
         "highlights": [
-            "Core RPS product line",
-            "Aligned to electrical distribution projects",
-            "Suited to supply and project execution packages",
+            "Medium voltage power distribution",
+            "5 current ratings",
+            "630/800A",
+            "630A cap switching",
+            "1250A",
+            "2000A",
+            "2500A",
         ],
         "applications": [
-            "Distribution systems",
-            "Industrial facilities",
-            "Infrastructure and municipal environments",
+            "Medium voltage distribution networks",
+            "Industrial and mining facilities",
+            "Municipal and infrastructure environments",
         ],
         "support": [
             "Engineering and professional services support",
@@ -268,74 +278,93 @@ PRODUCTS = [
             "Testing and commissioning support",
         ],
         "meta": [
-            {"label": "Product type", "value": "Switchgear"},
-            {"label": "Company category", "value": "Core product family"},
-            {"label": "Project fit", "value": "Distribution and project delivery"},
+            {"label": "Product type", "value": "Medium voltage switchgear"},
+            {"label": "Available ratings", "value": "630/800A, 630A cap switching, 1250A, 2000A, 2500A"},
+            {"label": "Project fit", "value": "Distribution and network delivery"},
         ],
+        "brochure": "brochures/lmvp-switchgear-brochure.pdf",
+        "brochure_label": "Download LMVP Brochure",
     },
     {
         "slug": "reyrolle-retrofit-solutions",
         "name": "Reyrolle Switchgear Retrofit Solutions",
-        "category": "Retrofit solutions",
+        "category": "Legacy switchgear retrofit solutions",
         "image": "/static/img/retrofit.webp",
-        "summary": "Retrofit solutions for legacy Reyrolle switchgear installations.",
-        "intro": "Reyrolle Switchgear Retrofit Solutions support brownfield upgrade work on existing Reyrolle installations requiring life extension and modernisation.",
+        "summary": "Type-tested retrofit and extension solutions for legacy Reyrolle LM switchgear that improve safety and service life without full switchboard replacement.",
+        "intro": "RPS Switchgear SA provides retrofit solutions for the legacy Reyrolle LM range of switchgear, which has an enormous installed base in Sub-Saharan Africa. RPS Switchgear SA is in a position to upgrade and retrofit existing legacy switchgear to IEC 62271-100/200 safety features. RPS SA also provides LMVP extension panels for legacy Reyrolle switchboards that are certified to a 25kA at 1 second A-FLR IAC withstand and seismic 1G test.",
         "overview": (
-            "This offering supports the upgrade of existing Reyrolle switchgear assets and aligns with "
-            "the company’s retrofit, relay upgrade, and replacement work shown in its project portfolio."
+            "This offering provides a practical modernization path for operators who need to extend the "
+            "service life of installed Reyrolle switchgear while improving safety, reliability, "
+            "maintainability, and operational continuity. By retrofitting compatible existing "
+            "switchboard infrastructure rather than replacing complete boards, projects can strengthen "
+            "performance and reduce the disruption associated with full switchboard replacement."
         ),
         "highlights": [
-            "Focused on legacy Reyrolle switchgear",
-            "Supports brownfield upgrade projects",
-            "Aligned to retrofit and relay upgrade scopes",
+            "Retrofit solutions for legacy Reyrolle LM switchgear",
+            "Extends service life without full switchboard replacement",
+            "Upgrades existing installations toward IEC 62271-100/200 safety features",
+            "Compatible with existing switchgear infrastructure where applicable",
+            "LMVP extension panels certified to 25kA at 1 second A-FLR IAC withstand",
+            "Supports improved reliability, maintainability, safety, and operational continuity",
         ],
         "applications": [
-            "Legacy substations",
-            "Brownfield upgrade projects",
-            "Operational power systems requiring refurbishment",
+            "Legacy Reyrolle switchboards in service",
+            "Brownfield substation and plant upgrades",
+            "Operational networks requiring life extension and modernization",
         ],
         "support": [
-            "Retrofit planning",
-            "Installation and replacement support",
-            "Testing and recommissioning alignment",
+            "Retrofit planning and scope definition",
+            "Installation aligned to existing switchgear infrastructure",
+            "Testing, recommissioning, and upgrade support",
         ],
         "meta": [
-            {"label": "Product type", "value": "Retrofit solution"},
-            {"label": "Company category", "value": "Core product family"},
-            {"label": "Project fit", "value": "Life extension and upgrade work"},
+            {"label": "Product type", "value": "Legacy switchgear retrofit solution"},
+            {"label": "Safety upgrade", "value": "IEC 62271-100/200 features"},
+            {"label": "Extension panel rating", "value": "25kA at 1 second A-FLR IAC withstand"},
+            {"label": "Additional qualification", "value": "Seismic 1G test"},
         ],
+        "brochure": "brochures/reyrolle-retrofit-solutions-brochure.pdf",
+        "brochure_label": "Download Reyrolle Retrofit Solutions Brochure",
     },
     {
         "slug": "low-voltage-switchboard-assemblies",
         "name": "Low Voltage Switchboard Assemblies",
-        "category": "LV switchboards",
+        "category": "Type-tested LV switchboard assemblies",
         "image": "/static/img/lv_solutions.webp",
-        "summary": "Low voltage switchboard assemblies including MCCs, distribution boards, containerised solutions, MV switchrooms, and LV E-Rooms.",
-        "intro": "Low Voltage Switchboard Assemblies support distribution, motor control, and packaged electrical infrastructure requirements across project environments.",
+        "summary": "IEC 61439 type-tested low voltage switchboard assemblies for dependable electrical distribution, motor control, and packaged plant support.",
+        "intro": "RPS Switchgear SA offers Low Voltage switchboard assemblies type tested to IEC61439, including MCCs, Distribution Boards, Containerised Solutions, MV Switchrooms, and LV E-Rooms.",
         "overview": (
-            "The company’s LV assembly capability includes MCCs, distribution boards, containerised "
-            "solutions, MV switchrooms, and LV E-Rooms for broader electrical infrastructure delivery."
+            "RPS supplies and manufactures low voltage switchboard assemblies for projects that require "
+            "dependable electrical distribution and control, quality assembly, maintainability, and "
+            "long-term operational reliability. The range is suited to commercial, industrial, "
+            "municipal, and infrastructure environments where safe and practical LV distribution "
+            "solutions must integrate cleanly with broader project delivery."
         ),
         "highlights": [
-            "Core RPS product family",
-            "Includes MCCs and distribution boards",
-            "Extends to containerised solutions, MV switchrooms, and LV E-Rooms",
+            "Type tested to IEC61439",
+            "Supplied and manufactured by RPS Switchgear SA",
+            "Supports dependable electrical distribution and control",
+            "Includes MCCs, Distribution Boards, Containerised Solutions, MV Switchrooms, and LV E-Rooms",
+            "Designed for safety, maintainability, and long-term operational reliability",
         ],
         "applications": [
-            "Industrial facilities",
-            "Municipal projects",
-            "Commercial and infrastructure electrical systems",
+            "Commercial facilities and buildings",
+            "Industrial plants and process environments",
+            "Municipal, utility, and infrastructure projects",
         ],
         "support": [
-            "Engineering support",
+            "Engineering and assembly support",
             "Manufacture, installation, and commissioning alignment",
-            "Maintenance and future upgrade support",
+            "Maintenance, lifecycle support, and future upgrade readiness",
         ],
         "meta": [
-            {"label": "Product type", "value": "LV switchboard assemblies"},
-            {"label": "Company category", "value": "Core product family"},
-            {"label": "Project fit", "value": "Supply, installation, and distribution systems"},
+            {"label": "Product type", "value": "Low voltage switchboard assemblies"},
+            {"label": "Standard", "value": "IEC61439"},
+            {"label": "Configurations", "value": "MCCs, Distribution Boards, Containerised Solutions, MV Switchrooms, LV E-Rooms"},
+            {"label": "Project fit", "value": "Electrical distribution and control systems"},
         ],
+        "brochure": None,
+        "brochure_label": None,
     },
 ]
 
@@ -375,33 +404,73 @@ SERVICES = [
     {
         "slug": "engineering-and-professional-services",
         "name": "Engineering & Professional Services",
-        "category": "Technical support",
-        "image": "/static/img/assure-hmvp-switchgear.webp",
-        "summary": "Engineering and professional services for electrical project planning and delivery.",
-        "intro": "Engineering & Professional Services support project planning, technical definition, coordination, and delivery across electrical infrastructure work.",
+        "category": "Engineering and project support",
+        "image": "/static/img/services/engineering-professional-services-1.webp",
+        "summary": "Electrical engineering studies, design support, and professional services for network planning, system analysis, and power infrastructure delivery.",
+        "list_summary": "Engineering studies, design support, and professional services for electrical infrastructure planning and project delivery.",
+        "intro": "RPS provides Engineering Services covering load flow studies, harmonic studies, network design, protection schemes design, control systems design, MV & HV breaker maintenance and testing, and protection relay testing.",
         "overview": (
-            "This service supports the planning, technical definition, and execution of electrical "
-            "projects across switchgear, substations, installations, and related infrastructure."
+            "The professional services scope extends into master planning, project-specific planning "
+            "and design, project management, and implementation support for power system "
+            "infrastructure associated with major distribution, township and rural reticulation and "
+            "electrification networks, including substations, overhead lines, electrification "
+            "refurbishment, and cabled networks. An integral part of this work is accurate modelling "
+            "of existing and future network configurations and load characteristics to enable "
+            "effective network analysis using DigSilent software and ReticMaster voltage-drop models."
         ),
         "scope": [
-            "Technical support",
-            "Project engineering",
-            "Professional services for delivery planning",
+            "Load flow and harmonic studies",
+            "Network, protection scheme, and control system design",
+            "MV & HV breaker maintenance and testing",
+            "Protection relay testing",
+            "Master planning, project-specific planning, and project management",
+            "HVAC, small power and lighting, and PV system design",
         ],
         "outcomes": [
-            "Clearer project definition",
-            "Better technical coordination",
-            "Stronger project execution support",
+            "Accurate modelling of existing and future network configurations",
+            "Better definition of plant, line parameter, and load behaviour",
+            "Load flow analysis",
+            "Fault level calculations",
+            "Voltage stability analysis",
+            "Transient switching studies",
+            "Optimal placing of compensation devices",
+            "Losses optimisation",
+            "Quality of supply analysis",
+            "Unbalanced network loading and statistical modelling of LV systems",
         ],
         "fit": [
-            "Industrial projects",
-            "Infrastructure delivery",
-            "Switchgear and substation programmes",
+            "Major distribution and power system infrastructure projects",
+            "Township and rural reticulation and electrification networks",
+            "Substations, overhead lines, refurbishment, and cabled networks",
+            "Industrial, municipal, utility, and infrastructure programmes",
+        ],
+        "list_fit": [
+            "Major distribution infrastructure projects",
+            "Reticulation and electrification networks",
+            "Substations, overhead lines, and cabled networks",
         ],
         "meta": [
-            {"label": "Service type", "value": "Engineering support"},
-            {"label": "Capability", "value": "Core service line"},
-            {"label": "Project fit", "value": "Planning and execution"},
+            {"label": "Service type", "value": "Engineering and professional services"},
+            {"label": "Core studies", "value": "Load flow, harmonic, fault, and voltage stability"},
+            {"label": "Design scope", "value": "Network, protection, control, HVAC, lighting, and PV"},
+            {"label": "Analysis tools", "value": "DigSilent and ReticMaster"},
+        ],
+        "images": [
+            {
+                "src": "/static/img/services/engineering-professional-services-1.webp",
+                "alt": "Engineering studies and system schematics",
+                "caption": "Engineering studies, network design, and protection planning support.",
+            },
+            {
+                "src": "/static/img/services/engineering-professional-services-2.webp",
+                "alt": "Professional services planning schematic",
+                "caption": "Planning, design coordination, and professional project support for power infrastructure.",
+            },
+            {
+                "src": "/static/img/services/engineering-professional-services-3.webp",
+                "alt": "Electrical network analysis schematic",
+                "caption": "Detailed network analysis using modelling tools to evaluate system performance.",
+            },
         ],
     },
     {
@@ -438,34 +507,51 @@ SERVICES = [
     },
     {
         "slug": "substation-construction-and-upgrades",
-        "name": "Substation Construction & Upgrade",
-        "category": "Substation delivery",
-        "image": "/static/img/assure-hmvp-switchgear.webp",
-        "summary": "Substation construction and upgrade work for utility, municipal, and industrial environments.",
-        "intro": "Substation Construction & Upgrade supports utility, municipal, industrial, and infrastructure projects requiring new build or brownfield substation work.",
+        "name": "Substation Construction & Upgrades",
+        "category": "Turnkey substation delivery",
+        "image": "/static/img/services/substation-construction-upgrades-hero.webp",
+        "summary": "Turnkey substation construction and rehabilitation for substations up to 132kV.",
+        "list_summary": "Turnkey substation construction and rehabilitation support for utility, municipal, and industrial networks up to 132kV.",
+        "intro": (
+            "RPS Switchgear SA offers turnkey solutions in substation construction and rehabilitation "
+            "for substations up to 132kV, supported by expertise in substation design, engineering, "
+            "and construction."
+        ),
         "overview": (
-            "The project portfolio shows both substation switchroom work and wider distribution and "
-            "upgrade projects, linking this service directly to active field delivery capability."
+            "With more than 15 years of hands-on experience, the team delivers new-build, upgrade, "
+            "and refurbishment programmes that require disciplined site-based execution, electrical "
+            "infrastructure coordination, and structured commissioning support. The service is suited "
+            "to projects where existing substations must be rehabilitated or expanded without losing "
+            "focus on safety, maintainability, and long-term operating reliability."
         ),
         "scope": [
-            "Substation construction",
-            "Substation upgrade work",
-            "Related installation and commissioning support",
+            "Turnkey substation construction up to 132kV",
+            "Substation rehabilitation, refurbishment, and upgrade works",
+            "Substation design, engineering, and construction support",
+            "Associated MV/LV infrastructure and site-based electrical works",
+            "Testing, commissioning, and project handover support",
         ],
         "outcomes": [
-            "Improved electrical infrastructure",
-            "Structured upgrade delivery",
-            "Commissioning-ready substations",
+            "Construction-ready and commissioning-ready substations",
+            "Improved condition and service life of existing substation assets",
+            "Safer, more maintainable infrastructure for long-term operation",
+            "Controlled project execution from engineering through site delivery",
         ],
         "fit": [
             "Municipal projects",
             "Utility projects",
             "Industrial substations",
+            "Brownfield rehabilitation and expansion programmes",
+        ],
+        "list_fit": [
+            "Municipal projects",
+            "Utility projects",
+            "Industrial substations",
         ],
         "meta": [
-            {"label": "Service type", "value": "Substation works"},
-            {"label": "Capability", "value": "Core service line"},
-            {"label": "Project fit", "value": "Build and upgrade programmes"},
+            {"label": "Service type", "value": "Turnkey substation works"},
+            {"label": "Voltage scope", "value": "Substations up to 132kV"},
+            {"label": "Delivery model", "value": "Construction, rehabilitation, and upgrades"},
         ],
     },
     {

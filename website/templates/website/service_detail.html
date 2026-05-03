@@ -66,6 +66,30 @@
         </div>
     </section>
 
+    {% if service.images %}
+        <section class="section section--muted">
+            <div class="container">
+                <div class="section-heading section-heading--compact">
+                    <span class="eyebrow">Service Visuals</span>
+                    <h2>Reference visuals from engineering studies and system analysis.</h2>
+                </div>
+
+                <div class="service-gallery">
+                    {% for item in service.images %}
+                        <figure class="service-gallery__item">
+                            <div class="service-gallery__media">
+                                <img src="{{ item.src }}" alt="{{ item.alt }}">
+                            </div>
+                            {% if item.caption %}
+                                <figcaption>{{ item.caption }}</figcaption>
+                            {% endif %}
+                        </figure>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
     <section class="section section--muted">
         <div class="container split-layout split-layout--balanced">
             <div>
@@ -102,4 +126,3 @@
         </div>
     </section>
 {% endblock %}
-
