@@ -9,6 +9,10 @@
         name="description"
         content="{% block meta_description %}RPS Switchgear SA delivers electrical engineering, switchgear, substations, maintenance, retrofit, renewable energy, and electrification solutions from Jet Park, Johannesburg.{% endblock %}"
     >
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}">
     {% block extra_head %}{% endblock %}
     <link rel="stylesheet" href="{% static 'css/website.css' %}">
     <script src="{% static 'js/website.js' %}" defer></script>
