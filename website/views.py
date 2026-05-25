@@ -373,7 +373,8 @@ SERVICES = [
         "slug": "renewable-energy-solutions",
         "name": "Renewable Energy Solutions",
         "category": "Energy infrastructure",
-        "image": "/static/img/assure-hmvp-switchgear.webp",
+        "image": "/static/img/solar_2.webp",
+        "image_mobile": "/static/img/solar_2-mobile.webp",
         "summary": "Renewable energy solutions for generation, integration, and supporting electrical infrastructure.",
         "intro": "Renewable Energy Solutions support projects that require practical electrical engineering, installation, and commissioning capability.",
         "overview": (
@@ -626,10 +627,10 @@ PROJECTS = [
         "title": "BPC - Botswana Power Corporation",
         "image": "/static/img/switchgear-room.webp",
         "summary": (
-            "Retrofitting of a 14-panel switchboard at Selibe Phikwe Substation in Botswana."
+            "Refurbishment of a 14-panel switchboard at Selibe Phikwe Substation in Botswana."
         ),
         "deliverables": [
-            "Retrofitting of 14-panel switchboard",
+            "Refurbishment of 14-panel switchboard",
             "Substation upgrade support",
             "Site execution in Selibe Phikwe, Botswana",
         ],
@@ -652,7 +653,7 @@ PROJECTS = [
         "title": "Quton Farms - Bronkhorstspruit, South Africa",
         "image": "/static/img/solar_1.webp",
         "summary": (
-            "100kW, 200 PV hybrid solar power solution for Quton Farms in Bronkhorstspruit, South Africa."
+            "100kW hybrid solar power solution for Quton Farms in Bronkhorstspruit, South Africa."
         ),
         "deliverables": [
             "100kW hybrid solar power solution",
@@ -662,11 +663,11 @@ PROJECTS = [
     },
     {
         "sector": "Renewable energy",
-        "title": "Clyde Steel Solar Power Plant",
+        "title": "Clyde Steel 400kW Solar PV Plant",
         "image": "/static/img/clyde.webp",
         "summary": (
-            "A 400kW solar power plant project involving design, procurement, installation and commissioning "
-            "for a steel manufacturing company in Springs, Gauteng."
+            "This 400kW solar PV project included the design, procurement, installation, and commissioning of a commercial solar power solution."
+            " The project was executed in Springs, Gauteng, South Africa"
         ),
         "deliverables": [
             "Design",

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}{{ product.name }} | RPS Switchgear SA{% endblock %}
 
@@ -56,7 +57,7 @@
                 </div>
             </div>
 
-            <aside class="detail-sidebar">
+            <aside class="detail-sidebar content-stack">
                 <div class="data-points">
                     {% for item in product.meta %}
                         <div class="data-point">
@@ -65,6 +66,19 @@
                         </div>
                     {% endfor %}
                 </div>
+
+                {% if product.brochure %}
+                    <div class="aside-note">
+                        <h3>Product Brochure</h3>
+                        <p>Download the product brochure for technical reference and project planning.</p>
+                        <a class="button button--secondary"
+                           href="{% static product.brochure %}"
+                           target="_blank"
+                           rel="noopener">
+                            {{ product.brochure_label }}
+                        </a>
+                    </div>
+                {% endif %}
             </aside>
         </div>
     </section>

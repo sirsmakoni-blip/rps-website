@@ -1248,7 +1248,8 @@ ul {
     .page-hero--products .page-hero__grid,
     .page-hero--services .page-hero__grid,
     .page-hero--projects .page-hero__grid,
-    .page-hero--contact .page-hero__grid {
+    .page-hero--contact .page-hero__grid,
+    .page-hero--service-detail .page-hero__grid {
         grid-template-columns: 1fr;
         gap: 1.25rem;
         min-height: auto;
@@ -1258,7 +1259,8 @@ ul {
     .page-hero--products .page-hero__bg-image,
     .page-hero--services .page-hero__bg-image,
     .page-hero--projects .page-hero__bg-image,
-    .page-hero--contact .page-hero__bg-image {
+    .page-hero--contact .page-hero__bg-image,
+    .page-hero--service-detail .page-hero__bg-image {
         left: 0;
         right: 0;
         width: 100%;
