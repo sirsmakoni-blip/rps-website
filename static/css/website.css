@@ -1015,6 +1015,142 @@ ul {
     font-size: 0.95rem;
 }
 
+.page-hero__support {
+    margin: 0.9rem 0 0;
+    color: #405268;
+    font-size: 0.98rem;
+    line-height: 1.65;
+}
+
+.page-hero--lmvp-range .hero__actions,
+.page-hero--lmvp-child .hero__actions {
+    margin-top: 1.4rem;
+}
+
+.lmvp-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 2rem;
+}
+
+.lmvp-card {
+    display: grid;
+    grid-template-columns: minmax(180px, 0.7fr) minmax(0, 1fr);
+    gap: 1.2rem;
+    align-items: start;
+    padding-top: 1.1rem;
+    border-top: 2px solid var(--line);
+}
+
+.lmvp-card__media,
+.lmvp-image-block {
+    border: 1px solid var(--line);
+    background: #fff;
+}
+
+.lmvp-card__media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.lmvp-card__media:hover,
+.lmvp-card__media:focus-visible {
+    border-color: var(--accent-soft);
+    transform: translateY(-2px);
+}
+
+.lmvp-card__media img,
+.lmvp-image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.lmvp-card__media img {
+    padding: 0.6rem;
+}
+
+.lmvp-card__body {
+    display: grid;
+    gap: 0.55rem;
+    align-content: start;
+    min-width: 0;
+}
+
+.lmvp-card__body h3,
+.lmvp-technical-section h3,
+.lmvp-image-block figcaption {
+    margin-bottom: 0;
+    font-family: "Bahnschrift", "Arial Narrow", "Segoe UI", sans-serif;
+}
+
+.lmvp-card__body h3 a:hover,
+.lmvp-card__body h3 a:focus-visible {
+    color: var(--accent-soft);
+}
+
+.lmvp-card__subtitle {
+    margin-bottom: 0;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.lmvp-card__body p:not(.lmvp-card__subtitle),
+.lmvp-technical-section p,
+.lmvp-image-block figcaption {
+    color: var(--text-soft);
+}
+
+.lmvp-card__body .text-link {
+    margin-top: 0.2rem;
+}
+
+.lmvp-image-block {
+    display: grid;
+    gap: 0.75rem;
+    align-self: start;
+    margin: 0;
+    padding: 1rem;
+}
+
+.lmvp-image-block img {
+    aspect-ratio: 4 / 3;
+}
+
+.lmvp-image-block figcaption {
+    font-size: 0.94rem;
+}
+
+.lmvp-technical-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem 2rem;
+}
+
+.lmvp-technical-section {
+    padding-top: 1.2rem;
+    border-top: 2px solid var(--line);
+}
+
+.lmvp-technical-section h3 {
+    letter-spacing: -0.01em;
+}
+
+.lmvp-technical-section p:last-child,
+.lmvp-technical-section .accent-list:last-child {
+    margin-bottom: 0;
+}
+
+.lmvp-image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
 .service-gallery {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1179,6 +1315,11 @@ ul {
     .matrix {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .lmvp-card-grid,
+    .lmvp-technical-list {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 960px) {
@@ -1249,6 +1390,7 @@ ul {
     .page-hero--services .page-hero__grid,
     .page-hero--projects .page-hero__grid,
     .page-hero--contact .page-hero__grid,
+    .page-hero--product-detail .page-hero__grid,
     .page-hero--service-detail .page-hero__grid {
         grid-template-columns: 1fr;
         gap: 1.25rem;
@@ -1260,6 +1402,7 @@ ul {
     .page-hero--services .page-hero__bg-image,
     .page-hero--projects .page-hero__bg-image,
     .page-hero--contact .page-hero__bg-image,
+    .page-hero--product-detail .page-hero__bg-image,
     .page-hero--service-detail .page-hero__bg-image {
         left: 0;
         right: 0;
@@ -1268,6 +1411,11 @@ ul {
         background-position: center;
         background-size: cover;
         opacity: 0.2;
+    }
+
+    .page-hero--lmvp-range .page-hero__bg-image,
+    .page-hero--lmvp-child .page-hero__bg-image {
+        background-size: contain;
     }
 
     .hero-text-box,
@@ -1282,12 +1430,21 @@ ul {
     .detail-columns,
     .service-gallery,
     .related-links,
+    .lmvp-image-grid,
     .footer-grid,
     .site-cta__inner,
     .project-list-item,
     .section__split,
     .section__split-left {
         grid-template-columns: 1fr;
+    }
+
+    .lmvp-card {
+        grid-template-columns: 1fr;
+    }
+
+    .lmvp-card__media {
+        min-height: 220px;
     }
 
     .section__split {

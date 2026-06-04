@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ item.name }} | {{ product.name }} | RPS Switchgear SA{% endblock %}
+
+{% block content %}
+    {% include "website/partials/breadcrumbs.html" %}
+
+    <section class="page-hero page-hero--product-detail page-hero--lmvp-child">
+        <div
+            class="page-hero__bg-image"
+            style="background-image: url('{% static item.image %}');"
+            aria-hidden="true">
+        </div>
+
+        <div class="container page-hero__grid">
+            <div class="hero-text-box">
+                <span class="eyebrow">{{ item.category }}</span>
+                <h1>{{ item.name }}</h1>
+            </div>
+
+            <div class="hero-text-box hero-text-box--light">
+                <p class="page-hero__lead">{{ item.subtitle }}</p>
+                <p class="page-hero__support">{{ item.summary }}</p>
+                <div class="hero__actions">
+                    {% if product.brochure %}
+                        <a class="button button--secondary"
+                           href="{% static product.brochure %}"
+                           target="_blank"
+                           rel="noopener">
+                            {{ product.brochure_label }}
+                        </a>
+                    {% endif %}
+                    <a class="button button--primary" href="{% url 'website:product_detail' product.slug %}">Back to LMVP Range</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container detail-layout">
+            <div class="detail-main">
+                <div class="section-heading section-heading--compact">
+                    <span class="eyebrow">Technical Overview</span>
+                    <h2>{{ item.subtitle }}</h2>
+                </div>
+
+                <p>{{ item.summary }}</p>
+
+                <div class="detail-columns">
+                    <div>
+                        <h3>Key Highlights</h3>
+                        <ul class="accent-list">
+                            {% for point in item.highlights %}
+                                <li>{{ point }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <figure class="lmvp-image-block">
+                        <img src="{% static item.image %}" alt="{{ item.image_alt }}" loading="lazy">
+                        <figcaption>{{ item.image_caption }}</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <aside class="detail-sidebar content-stack">
+                <div class="data-points">
+                    {% for point in item.meta %}
+                        <div class="data-point">
+                            <span class="data-point__label">{{ point.label }}</span>
+                            <strong>{{ point.value }}</strong>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                {% if product.brochure %}
+                    <div class="aside-note">
+                        <h3>LMVP Brochure</h3>
+                        <p>Download the shared LMVP brochure for product reference and project planning.</p>
+                        <a class="button button--secondary"
+                           href="{% static product.brochure %}"
+                           target="_blank"
+                           rel="noopener">
+                            {{ product.brochure_label }}
+                        </a>
+                    </div>
+                {% endif %}
+            </aside>
+        </div>
+    </section>
+
+    <section class="section section--muted">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Technical Sections</span>
+                <h2>Structured detail for {{ item.name }}.</h2>
+            </div>
+
+            <div class="lmvp-technical-list">
+                {% for section in item.sections %}
+                    <article class="lmvp-technical-section">
+                        <h3>{{ section.title }}</h3>
+                        {% for paragraph in section.body %}
+                            <p>{{ paragraph }}</p>
+                        {% endfor %}
+                        {% if section.points %}
+                            <ul class="accent-list">
+                                {% for point in section.points %}
+                                    <li>{{ point }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {% if item.gallery %}
+        <section class="section">
+            <div class="container">
+                <div class="section-heading section-heading--compact">
+                    <span class="eyebrow">Product Images</span>
+                    <h2>Additional LMVP reference image.</h2>
+                </div>
+
+                <div class="lmvp-image-grid">
+                    {% for image in item.gallery %}
+                        <figure class="lmvp-image-block">
+                            <img src="{% static image.src %}" alt="{{ image.alt }}" loading="lazy">
+                            <figcaption>{{ image.caption }}</figcaption>
+                        </figure>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+    <section class="section{% if not item.gallery %} section--muted{% endif %}">
+        <div class="container">
+            <div class="section-heading section-heading--compact">
+                <span class="eyebrow">LMVP Range</span>
+                <h2>Other LMVP product pages.</h2>
+            </div>
+
+            <div class="related-links">
+                {% for related in related_items %}
+                    <a class="related-links__item" href="{% url 'website:lmvp_product_detail' related.slug %}">
+                        <span class="related-links__label">{{ related.category }}</span>
+                        <strong>{{ related.name }}</strong>
+                        <span>{{ related.subtitle }}</span>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-heading section-heading--compact">
+                <span class="eyebrow">Related Products</span>
+                <h2>Explore adjacent RPS product platforms.</h2>
+            </div>
+
+            <div class="related-links">
+                {% for related in related_products %}
+                    <a class="related-links__item" href="{% url 'website:product_detail' related.slug %}">
+                        <span class="related-links__label">{{ related.category }}</span>
+                        <strong>{{ related.name }}</strong>
+                        <span>{{ related.summary }}</span>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

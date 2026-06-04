@@ -249,23 +249,24 @@ PRODUCTS = [
     {
         "slug": "lmvp-switchgear",
         "name": "RPS LMVP Switchgear",
-        "category": "Medium voltage switchgear",
-        "image": "/static/img/lvmp.webp",
-        "summary": "Medium voltage switchgear for network distribution with five breaker current ratings from 630/800A through 2500A.",
-        "intro": "The LMVP switchgear enables the distribution of Electrical Power through Networks to the Consumer at medium voltage. The circuit breakers are available in 5 current ratings, 630/800A, 630A cap switching, 1250A, 2000A and 2500A.",
+        "category": "LMVP medium voltage switchgear range",
+        "image": "/static/img/lmvp/iec-62271-single-busbar.webp",
+        "hero_image": "img/lmvp/iec-62271-single-busbar.webp",
+        "summary": "LMVP medium voltage switchgear range covering RPM vacuum circuit breakers, IEC 62271 and IEC 298 single busbar panels, and double busbar panels for 12kV distribution projects.",
+        "intro": "The LMVP switchgear range supports medium voltage distribution through practical circuit-breaker and panel configurations for network, industrial, infrastructure, and mining environments. The range includes the RPM vacuum circuit breaker, IEC 62271 single busbar panel, IEC 298 single busbar panel with withdrawable voltage transformer, and double busbar panel.",
         "overview": (
-            "The LMVP range supports medium voltage distribution duties where project teams need "
-            "rating flexibility and a practical switchgear platform for municipal, industrial, "
-            "mining, and infrastructure applications."
+            "The platform combines flexible breaker ratings, fixed metal-clad panel construction, "
+            "internal arc tested arrangements, and options for voltage transformer integration. "
+            "RPS Switchgear SA presents the LMVP range within its current South African product "
+            "portfolio for projects that need robust 12kV distribution equipment and lifecycle support."
         ),
         "highlights": [
-            "Medium voltage power distribution",
-            "5 current ratings",
-            "630/800A",
-            "630A cap switching",
-            "1250A",
-            "2000A",
-            "2500A",
+            "RPM vacuum circuit breaker and carriage",
+            "IEC 62271 single busbar panel",
+            "IEC 298 single busbar panel with withdrawable VT",
+            "Double busbar panel configuration",
+            "Breaker ratings from 630/800A through 2500A",
+            "Internal arc and seismic test highlights across the range",
         ],
         "applications": [
             "Medium voltage distribution networks",
@@ -278,9 +279,9 @@ PRODUCTS = [
             "Testing and commissioning support",
         ],
         "meta": [
-            {"label": "Product type", "value": "Medium voltage switchgear"},
-            {"label": "Available ratings", "value": "630/800A, 630A cap switching, 1250A, 2000A, 2500A"},
-            {"label": "Project fit", "value": "Distribution and network delivery"},
+            {"label": "Product type", "value": "12kV LMVP switchgear range"},
+            {"label": "Breaker ratings", "value": "630/800A, 630A cap switching, 1250A, 2000A, 2500A"},
+            {"label": "Range pages", "value": "4 dedicated LMVP product details"},
         ],
         "brochure": "brochures/lmvp-switchgear-brochure.pdf",
         "brochure_label": "Download LMVP Brochure",
@@ -365,6 +366,357 @@ PRODUCTS = [
         ],
         "brochure": None,
         "brochure_label": None,
+    },
+]
+
+LMVP_RANGE_STRENGTHS = [
+    {
+        "title": "Flexible breaker ratings",
+        "text": "RPM vacuum circuit breakers cover 630/800A, 630A capacitor switching, 1250A, 2000A, and 2500A duties.",
+    },
+    {
+        "title": "Practical panel configurations",
+        "text": "The range covers IEC 62271 single busbar, IEC 298 single busbar with withdrawable voltage transformer, and double busbar arrangements.",
+    },
+    {
+        "title": "Arc fault tested options",
+        "text": "LMVP panel arrangements include internal arc certification highlights up to 25kA for 1 second with A-FLR access categories where specified.",
+    },
+    {
+        "title": "Lifecycle replacement fit",
+        "text": "The RPM vacuum circuit breaker is designed for interchangeability with Reyrolle LMT oil circuit breakers in suitable legacy applications.",
+    },
+]
+
+LMVP_CERTIFICATION_HIGHLIGHTS = [
+    {"label": "Mechanical endurance", "value": "RPM circuit breakers type tested to M2 under IEC 62271-100."},
+    {"label": "Safety interlocking", "value": "Safety interlocks aligned to IEC 62271-200, including tripping by attempted isolation."},
+    {"label": "IEC 298 arc options", "value": "20kA for 1 second A-FL and 25kA for 1 second A-FLR certification highlights."},
+    {"label": "IEC 62271-200 arc options", "value": "25kA for 1 second front, lateral, and rear access with ducted or internally vented solutions."},
+    {"label": "Seismic testing", "value": "IEC 62271 single busbar configuration includes 1g seismic compliance highlights tested to IEEE 693."},
+]
+
+LMVP_RANGE_ITEMS = [
+    {
+        "slug": "rpm-vacuum-circuit-breaker",
+        "name": "RPM Vacuum Circuit Breaker",
+        "subtitle": "Vacuum circuit-breaker and integral carriage",
+        "category": "LMVP circuit breaker",
+        "summary": "Vacuum circuit breaker mounted on an integral steel carriage, with air-insulated vacuum interrupters and Reyrolle LMT interchangeability.",
+        "image": "img/lmvp/rpm-vacuum-circuit-breaker.webp",
+        "image_alt": "RPM vacuum circuit breaker carriage",
+        "image_caption": "RPM vacuum circuit breaker and integral carriage.",
+        "gallery": [
+            {
+                "src": "img/lmvp/rpm-vacuum-circuit-breaker-diagram.webp",
+                "alt": "RPM vacuum circuit breaker technical diagram",
+                "caption": "Circuit-breaker housing and carriage diagram.",
+            },
+        ],
+        "meta": [
+            {"label": "Current ratings", "value": "630/800A, 630A cap switching, 1250A, 2000A, 2500A"},
+            {"label": "Interchangeability", "value": "Reyrolle LMT oil circuit breaker"},
+            {"label": "Endurance class", "value": "M2 to IEC 62271-100"},
+        ],
+        "highlights": [
+            "Integral steel carriage with four flanged wheels",
+            "Central screw mechanism for raising and lowering",
+            "Three resin housings with vacuum interrupters",
+            "Self-aligning multi-finger isolating contacts",
+            "Positive copper earthing contact",
+        ],
+        "sections": [
+            {
+                "title": "Overview",
+                "body": [
+                    "The RPM circuit breaker is the LMVP vacuum circuit-breaker platform for medium voltage distribution duties. It is available across five current-rating families to suit feeder, incomer, and capacitor switching requirements.",
+                ],
+            },
+            {
+                "title": "Available current ratings",
+                "points": [
+                    "630/800A",
+                    "630A capacitor switching",
+                    "1250A",
+                    "2000A",
+                    "2500A",
+                ],
+            },
+            {
+                "title": "Circuit-breaker and carriage construction",
+                "body": [
+                    "The circuit breaker is mounted on a steel carriage with four flanged wheels for controlled location inside the panel enclosure. A removable handle operates the central screw mechanism used to raise and lower the breaker.",
+                    "The RPM-series LMVP breaker uses three separate resin housings, each containing an air-insulated vacuum interrupter separated by perspex phase barriers. Primary through-bushings, guide pins, isolating contacts, and a copper earthing contact support accurate location and dependable primary connection.",
+                    "Current transfer is handled through multi-laminated sliding contacts. Disc springs provide the added contact load in the closed position, and the copper-chrome interrupter contacts help limit contact erosion.",
+                ],
+            },
+            {
+                "title": "Reyrolle LMT interchangeability",
+                "body": [
+                    "The LMVP vacuum circuit breaker is designed to be interchangeable with the Reyrolle Switchgear LMT oil circuit breaker where the existing installation and project scope allow.",
+                ],
+            },
+            {
+                "title": "Mechanical endurance testing",
+                "body": [
+                    "The circuit breakers have been type tested to mechanical endurance class M2 under IEC 62271-100.",
+                ],
+            },
+            {
+                "title": "Safety interlocks",
+                "body": [
+                    "Safety interlocking is aligned to IEC 62271-200 and includes tripping by attempted isolation.",
+                ],
+            },
+            {
+                "title": "Operational interlocks",
+                "points": [
+                    "Prevent moving the circuit breaker into the housing unless it is fully lowered.",
+                    "Prevent raising the breaker unless the secondary circuit plug is correctly inserted and secured.",
+                    "Prevent inserting or removing the secondary plug unless the breaker is fully lowered and the locating bolt is free.",
+                    "Prevent closing the breaker while the manual trip is pushed.",
+                    "Prevent discharging the closing spring while the breaker is closed.",
+                    "Prevent attempted isolation from tripping the circuit breaker in service.",
+                ],
+            },
+        ],
+    },
+    {
+        "slug": "iec-62271-single-busbar-panel",
+        "name": "IEC 62271 Single Busbar Panel",
+        "subtitle": "LMVP 12kV single busbar panel",
+        "category": "LMVP single busbar panel",
+        "summary": "12kV single busbar panel with IEC 62271-200 internal arc highlights, seismic compliance highlights, and non-withdrawable swing voltage transformer option.",
+        "image": "img/lmvp/iec-62271-single-busbar.webp",
+        "image_alt": "IEC 62271 LMVP single busbar panel",
+        "image_caption": "LMVP 12kV single busbar panel.",
+        "gallery": [
+            {
+                "src": "img/lmvp/iec-62271-swing-vt.webp",
+                "alt": "LMVP swing voltage transformer",
+                "caption": "Non-withdrawable swing voltage transformer arrangement.",
+            },
+        ],
+        "meta": [
+            {"label": "Panel type", "value": "12kV single busbar"},
+            {"label": "Internal arc", "value": "25kA for 1 second, A-FLR"},
+            {"label": "Seismic highlight", "value": "1g test level to IEEE 693"},
+        ],
+        "highlights": [
+            "Fixed rigid sheet steel enclosure",
+            "Copper busbars rated up to 3000A",
+            "Front, lateral, and rear access internal arc certification highlights",
+            "Ducted and internally vented arc solutions",
+            "Non-withdrawable swing voltage transformer option",
+        ],
+        "sections": [
+            {
+                "title": "Overview",
+                "body": [
+                    "The IEC 62271 single busbar panel is a 12kV LMVP fixed-enclosure panel built around four main sections: busbar and current transformer chamber, control cubicle, cable box, and circuit breaker compartment.",
+                ],
+            },
+            {
+                "title": "Busbar and Current Transformer Chamber",
+                "body": [
+                    "The busbar chamber contains three-phase copper busbars rated at 1250A, 2000A, 2500A, or 3000A. The rear chamber section houses current transformers selected to project specification.",
+                    "Current transformer options include low-voltage insulated units mounted on earthed screened primary bushings with silica-filled epoxy resin insulation. Bar primary or wound primary types can be specified, with compliance to IEC 61869-1 and IEC 61869-2.",
+                ],
+            },
+            {
+                "title": "Control Cubicle",
+                "body": [
+                    "The control cubicle houses control equipment, protection relays, instruments, and associated relay wiring for the panel application.",
+                ],
+            },
+            {
+                "title": "Cable Box",
+                "body": [
+                    "The cable box is air insulated and arranged for heat-shrink cable terminations.",
+                ],
+            },
+            {
+                "title": "Circuit Breaker Compartment",
+                "body": [
+                    "The bottom section houses the circuit breaker. Guide rails support smooth entry and removal while helping the breaker locate accurately in the correct position.",
+                ],
+            },
+            {
+                "title": "Internal Arc Compliance (IEC 62271-200)",
+                "body": [
+                    "Certification highlights include 25kA for 1 second front, lateral, and rear access. The panel supports ducted and internally vented solutions, category A-FLR, and configurations that can vent into the substation through a thermal control baffle system or externally.",
+                    "The arrangement is suited to ceiling heights down to 2.8m and can be configured for different substation layouts while maintaining a controlled thermal profile around the switchboard during fault conditions.",
+                ],
+            },
+            {
+                "title": "Seismic Compliance (1g)",
+                "body": [
+                    "Seismic compliance highlights include testing to IEEE 693, with resonance frequency checks on three axes, time-history testing on x, y, and z axes at 1g for 30 seconds, auto re-close operation during testing, and functional tests before and after seismic testing.",
+                ],
+            },
+            {
+                "title": "Non-withdrawable swing voltage transformer",
+                "body": [
+                    "The swing VT solution has been tested to IEC 62271-200 for internal arc withstand. The voltage transformers comply with IEC 61869-1 and IEC 61869-3.",
+                ],
+            },
+        ],
+    },
+    {
+        "slug": "iec-298-single-busbar-panel",
+        "name": "IEC 298 Single Busbar Panel",
+        "subtitle": "LMVP 12kV single busbar panel with withdrawable voltage transformer",
+        "category": "LMVP single busbar panel",
+        "summary": "12kV single busbar panel in a fixed enclosure with withdrawable voltage transformer options and IEC 298 internal arc certification highlights.",
+        "image": "img/lmvp/iec-298-single-busbar.webp",
+        "image_alt": "IEC 298 LMVP single busbar panel",
+        "image_caption": "LMVP 12kV IEC 298 single busbar panel.",
+        "gallery": [
+            {
+                "src": "img/lmvp/iec-298-isolated-vt.webp",
+                "alt": "IEC 298 withdrawable voltage transformer",
+                "caption": "Withdrawable voltage transformer arrangement.",
+            },
+        ],
+        "meta": [
+            {"label": "Panel type", "value": "12kV single busbar with withdrawable VT"},
+            {"label": "Busbar ratings", "value": "1250A, 2000A, 2500A, 3000A"},
+            {"label": "Internal arc", "value": "20kA A-FL and 25kA A-FLR highlights"},
+        ],
+        "highlights": [
+            "Fixed rigid sheet steel enclosure",
+            "Four-section panel layout",
+            "Air-insulated cable box",
+            "Guide-rail supported breaker compartment",
+            "Fixed, withdrawable, or primary-disconnectable VT options",
+        ],
+        "sections": [
+            {
+                "title": "Overview",
+                "body": [
+                    "The IEC 298 single busbar panel is housed in a rigid fixed sheet steel enclosure. The enclosure is divided into the busbar and current transformer chamber, control cubicle, cable box, and circuit breaker compartment.",
+                ],
+            },
+            {
+                "title": "Busbar and Current Transformer Chamber",
+                "body": [
+                    "The busbar chamber contains three-phase copper busbars rated at 1250A, 2000A, 2500A, or 3000A. The rear section houses current transformers selected for the specification.",
+                    "Current transformers may be low-voltage insulated and mounted on earthed screened primary bushings with silica-filled epoxy resin insulation. Bar primary or wound primary types can be used, and the transformers comply with IEC 61869-1 and IEC 61869-2.",
+                ],
+            },
+            {
+                "title": "Control Cubicle",
+                "body": [
+                    "The control cubicle houses relays, control equipment, protection relays, and instruments.",
+                ],
+            },
+            {
+                "title": "Cable Box",
+                "body": [
+                    "The air-insulated cable box supports heat-shrink cable terminations.",
+                ],
+            },
+            {
+                "title": "Circuit Breaker Compartment",
+                "body": [
+                    "The lower section houses the circuit breaker. Guide rails provide smooth, safe entry and removal while ensuring accurate location in the correct position.",
+                ],
+            },
+            {
+                "title": "Internal Arc Compliance (IEC 298)",
+                "body": [
+                    "LMVP certification highlights for this panel include A-FL at 20kA for 1 second and A-FLR at 25kA for 1 second, depending on installation conditions and ceiling height.",
+                ],
+                "points": [
+                    "A-FL: 20kA for 1 second with 2.8m roof-right condition.",
+                    "A-FLR: 25kA for 1 second with 4m ceiling height condition.",
+                ],
+            },
+            {
+                "title": "Withdrawable Voltage Transformer",
+                "body": [
+                    "Voltage transformers with silica-filled epoxy resin encapsulated primary windings can be supplied as fixed, withdrawable, or primary-disconnectable units. They can connect to the circuit or busbars and comply with IEC 61869-1 and IEC 61869-3.",
+                ],
+            },
+        ],
+    },
+    {
+        "slug": "double-busbar-panel",
+        "name": "Double Busbar Panel",
+        "subtitle": "LMVP 12kV double busbar panel",
+        "category": "LMVP double busbar panel",
+        "summary": "12kV double busbar panel with segregated busbar chambers, current transformer chamber, cable box, voltage transformer housing, and withdrawable circuit-breaker carriage.",
+        "image": "img/lmvp/double-busbar-panel.webp",
+        "image_alt": "LMVP double busbar panel",
+        "image_caption": "LMVP 12kV double busbar panel.",
+        "gallery": [],
+        "meta": [
+            {"label": "Panel type", "value": "12kV double busbar"},
+            {"label": "Busbar layout", "value": "Front and rear busbar positions"},
+            {"label": "Breaker movement", "value": "Horizontal draw-out with vertical raise/lower engagement"},
+        ],
+        "highlights": [
+            "Fixed metal-clad enclosure",
+            "Two segregated busbar chambers",
+            "Current transformer chamber for measurement and protection inputs",
+            "Cable box for incomer, transformer, or feeder connections",
+            "Withdrawable carriage for front or rear busbar position",
+        ],
+        "sections": [
+            {
+                "title": "Overview",
+                "body": [
+                    "The LMVP double busbar panel is a 12kV fixed metal-clad enclosure arranged for two segregated busbar chambers and a withdrawable circuit-breaker carriage that can operate between front and rear busbar positions.",
+                ],
+            },
+            {
+                "title": "Fixed metal-clad enclosure components",
+                "points": [
+                    "Control cubicle for low-voltage relays and instruments.",
+                    "Two busbar chambers running the length of the switchboard.",
+                    "Current transformer chamber for measurement and protection inputs.",
+                    "Cable box for power cable connections.",
+                    "Voltage transformer and housing, where required.",
+                    "Circuit breaker chamber for the withdrawable part.",
+                ],
+            },
+            {
+                "title": "Dual segregated busbar chambers",
+                "body": [
+                    "The two busbar chambers are segregated from each other and run the length of the switchboard. Each chamber supports one three-phase set of insulated high-conductivity copper busbars.",
+                ],
+            },
+            {
+                "title": "Current Transformer chamber",
+                "body": [
+                    "The current transformer chamber provides measurement and protection devices with their current inputs.",
+                ],
+            },
+            {
+                "title": "Cable box",
+                "body": [
+                    "The cable box connects power cables to the transformer for incomer applications or to loads for feeder applications.",
+                ],
+            },
+            {
+                "title": "Voltage Transformer housing",
+                "body": [
+                    "A voltage transformer and housing can be incorporated to engage with either the circuit cable side or the busbars.",
+                ],
+            },
+            {
+                "title": "Circuit-breaker chamber",
+                "body": [
+                    "The circuit-breaker chamber receives the withdrawable part, which normally carries a vacuum circuit breaker.",
+                ],
+            },
+            {
+                "title": "Withdrawable carriage movement",
+                "body": [
+                    "The circuit breaker is raised or lowered vertically to engage or disengage from the main busbars. The carriage can be placed in the front busbar or rear busbar position, then drawn out or rolled into the compartment horizontally.",
+                ],
+            },
+        ],
     },
 ]
 
@@ -818,14 +1170,15 @@ CONTACT_DETAILS = [
 ]
 
 PRODUCT_LOOKUP = {product["slug"]: product for product in PRODUCTS}
+LMVP_RANGE_LOOKUP = {item["slug"]: item for item in LMVP_RANGE_ITEMS}
 SERVICE_LOOKUP = {service["slug"]: service for service in SERVICES}
 ABOUT_IMAGE = "/static/img/about.webp"
 SERVICES_IMAGE = "/static/img/service.webp"
 SERVICES_IMAGE_MOBILE = "/static/img/service-mobile.webp"
 PROJECTS_IMAGE = "/static/img/projects.webp"
 PROJECTS_IMAGE_MOBILE = "/static/img/projects-mobile.webp"
-CONTACT_IMAGE = "/static/img/contact.webp"
-CONTACT_IMAGE_MOBILE = "/static/img/contact-mobile.webp"
+CONTACT_IMAGE = "/static/img/about.webp"
+CONTACT_IMAGE_MOBILE = "/static/img/about-mobile.webp"
 
 def make_breadcrumbs(*crumbs):
     trail = [{"label": "Home", "url": reverse("website:home")}]
@@ -938,8 +1291,35 @@ def products(request):
     return render(request, "website/products.html", context)
 
 
+def render_lmvp_range(request, product):
+    related_products = [item for item in PRODUCTS if item["slug"] != product["slug"]][:3]
+    context = base_context(
+        "products",
+        product=product,
+        lmvp_items=LMVP_RANGE_ITEMS,
+        range_strengths=LMVP_RANGE_STRENGTHS,
+        certification_highlights=LMVP_CERTIFICATION_HIGHLIGHTS,
+        related_products=related_products,
+        breadcrumbs=make_breadcrumbs(
+            {"label": "Products", "url": reverse("website:products")},
+            {"label": product["name"]},
+        ),
+        cta=make_cta(
+            title="Planning an LMVP switchgear requirement?",
+            text="Contact RPS Switchgear SA to discuss panel configuration, ratings, testing requirements, supply, installation, and commissioning support.",
+            primary_label="Discuss LMVP switchgear",
+            secondary_label="Browse all products",
+            secondary_url=reverse("website:products"),
+        ),
+    )
+    return render(request, "website/lmvp_range.html", context)
+
+
 def product_detail(request, slug):
     product = get_item_or_404(PRODUCT_LOOKUP, slug, "Product")
+    if slug == "lmvp-switchgear":
+        return render_lmvp_range(request, product)
+
     related_products = [item for item in PRODUCTS if item["slug"] != slug][:3]
     context = base_context(
         "products",
@@ -958,6 +1338,33 @@ def product_detail(request, slug):
         ),
     )
     return render(request, "website/product_detail.html", context)
+
+
+def lmvp_product_detail(request, item_slug):
+    product = PRODUCT_LOOKUP["lmvp-switchgear"]
+    item = get_item_or_404(LMVP_RANGE_LOOKUP, item_slug, "LMVP product")
+    related_items = [entry for entry in LMVP_RANGE_ITEMS if entry["slug"] != item_slug]
+    related_products = [entry for entry in PRODUCTS if entry["slug"] != product["slug"]][:3]
+    context = base_context(
+        "products",
+        product=product,
+        item=item,
+        related_items=related_items,
+        related_products=related_products,
+        breadcrumbs=make_breadcrumbs(
+            {"label": "Products", "url": reverse("website:products")},
+            {"label": product["name"], "url": reverse("website:product_detail", args=[product["slug"]])},
+            {"label": item["name"]},
+        ),
+        cta=make_cta(
+            title="Need this LMVP configuration on a project?",
+            text="Contact RPS Switchgear SA to align the technical requirement, panel configuration, ratings, testing, and field support scope.",
+            primary_label="Request LMVP information",
+            secondary_label="Back to LMVP range",
+            secondary_url=reverse("website:product_detail", args=[product["slug"]]),
+        ),
+    )
+    return render(request, "website/lmvp_product_detail.html", context)
 
 
 def services(request):
