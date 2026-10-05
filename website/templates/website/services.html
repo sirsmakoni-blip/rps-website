@@ -39,6 +39,9 @@
                             <h2><a href="{% url 'website:service_detail' service.slug %}">{{ service.name }}</a></h2>
                         </div>
                         <p>{{ service.list_summary|default:service.summary }}</p>
+                        {% if service.slug == 'renewable-energy-solutions' %}
+                            <a class="text-link" href="{% url 'website:pv_solar_epc' %}">Explore EPC for PV Solar Solutions</a>
+                        {% endif %}
                         <div class="split-meta">
                             <ul class="pill-list">
                                 {% for item in service.list_fit|default:service.fit|slice:":3" %}

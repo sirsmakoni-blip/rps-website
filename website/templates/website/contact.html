@@ -5,94 +5,85 @@
 {% block content %}
     {% include "website/partials/breadcrumbs.html" %}
 
-    <section class="page-hero page-hero--contact">
-        <div 
-            class="page-hero__bg-image"
-            style="
-                --page-hero-image: url('{{ contact_image|default:'/static/img/contact.webp' }}');
-                --page-hero-image-mobile: url('{{ contact_image_mobile|default:'/static/img/contact-mobile.webp' }}');
-            "
-            aria-hidden="true">
-        </div>
-
-        <div class="container page-hero__grid">
-            <div class="hero-text-box">
+    <section class="contact-hero" aria-labelledby="contact-title">
+        <div class="container contact-hero__grid">
+            <div class="contact-hero__content">
                 <span class="eyebrow">Contact</span>
-                <h1>Contact RPS Switchgear SA for electrical engineering, switchgear, and infrastructure support.</h1>
+                <h1 id="contact-title">Get in touch with RPS</h1>
+                <p>Electrical engineering, switchgear, and project enquiries.</p>
             </div>
-
-            <div class="hero-text-box hero-text-box--light">
-                <p class="page-hero__lead">
-                    Get in touch with the RPS Switchgear SA team for product enquiries, service support, project requirements, maintenance, testing, retrofit, renewable energy, and electrification work.
-                </p>
-            </div>
+            <picture class="contact-hero__image">
+                <source media="(max-width: 900px)" srcset="{{ contact_image_mobile }}">
+                <img src="{{ contact_image }}" alt="RPS Switchgear SA building in Jet Park" width="1400" height="1050" fetchpriority="high">
+            </picture>
         </div>
     </section>
 
-    <section class="section">
-        <div class="container split-layout split-layout--balanced">
+    <section class="section contact-details" aria-labelledby="contact-details-title">
+        <div class="container contact-details__grid">
             <div>
-                <div class="section-heading section-heading--compact">
-                    <span class="eyebrow">Contact Details</span>
-                    <h2>Direct contact details for product, service, and project enquiries.</h2>
-                </div>
-                <div class="divider-list divider-list--compact">
-                    {% for detail in contact_details %}
-                        <article class="divider-item">
-                            <div class="divider-item__header">
-                                <span class="divider-item__label">{{ detail.label }}</span>
-                                {% if detail.hours %}
-                                    <h3>Working Hours</h3>
-                                    <ul class="working-hours-list">
-                                        {% for item in detail.hours %}
-                                            <li>
-                                                <strong>{{ item.day }}:</strong> {{ item.time }}
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                {% elif detail.href %}
-                                    <h3>
-                                        <a
-                                            href="{{ detail.href }}"
-                                            {% if detail.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
-                                            {{ detail.value }}
-                                        </a>
-                                    </h3>
-                                {% else %}
-                                    <h3>{{ detail.value }}</h3>
-                                {% endif %}
-                            </div>
-                            <p>{{ detail.note }}</p>
-                        </article>
-                    {% endfor %}
-                </div>
+                <h2 id="contact-details-title">Contact Details</h2>
+                <dl class="contact-details__list">
+                    <div class="contact-details__item">
+                        <dt>Address</dt>
+                        <dd>{{ contact_address }}</dd>
+                    </div>
+                    <div class="contact-details__item">
+                        <dt>Email</dt>
+                        <dd><a href="mailto:{{ contact_email }}">{{ contact_email }}</a></dd>
+                    </div>
+                    <div class="contact-details__item">
+                        <dt>Telephone</dt>
+                        <dd><a href="tel:{{ contact_phone_uri }}">{{ contact_phone_display }}</a></dd>
+                    </div>
+                    <div class="contact-details__item">
+                        <dt>Working Hours</dt>
+                        <dd>
+                            {% for item in contact_working_hours %}
+                                <span class="contact-details__hours"><strong>{{ item.day }}:</strong> {{ item.time }}</span>
+                            {% endfor %}
+                        </dd>
+                    </div>
+                </dl>
             </div>
-            <aside class="aside-note">
-                <span class="eyebrow">Regional Presence</span>
-                <h3>Positioned for national project support.</h3>
-                <ul class="accent-list accent-list--spacious">
-                    {% for item in regional_presence %}
-                        <li>{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </aside>
-        </div>
-    </section>
 
-    <section class="section section--muted">
-        <div class="container split-layout split-layout--balanced">
             <div>
-                <div class="section-heading section-heading--compact">
-                    <span class="eyebrow">Helpful Enquiry Topics</span>
-                    <h2>Common enquiry areas the RPS team can assist with.</h2>
-                </div>
-            </div>
-            <div>
-                <ul class="accent-list accent-list--spacious">
+                <h2>How Can We Help?</h2>
+                <ul class="contact-topics">
                     {% for item in enquiry_topics %}
                         <li>{{ item }}</li>
                     {% endfor %}
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--muted contact-regional" aria-labelledby="contact-regional-title">
+        <div class="container contact-regional__grid">
+            <div>
+                <span class="eyebrow">Regional Presence</span>
+                <h2 id="contact-regional-title">Positioned for national project support.</h2>
+            </div>
+            <ul class="contact-regional__list">
+                {% for item in regional_presence %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+
+    <section class="section contact-location" aria-labelledby="contact-location-label">
+        <div class="container">
+            <div class="contact-location__grid">
+                <picture class="contact-location__image">
+                    <source media="(max-width: 900px)" srcset="{{ contact_location_image_mobile }}">
+                    <img src="{{ contact_location_image }}" alt="Map of the Jet Park area near Kelly Road" width="1600" height="900" loading="lazy">
+                </picture>
+                <div class="contact-location__content">
+                    <span class="eyebrow" id="contact-location-label">Jet Park, Johannesburg</span>
+                    <address>{{ contact_address }}</address>
+                    <a class="button button--primary" href="{{ contact_location_url }}" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+                </div>
             </div>
         </div>
     </section>

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Project Opportunities | RPS Switchgear SA{% endblock %}
+{% block meta_description %}Explore RPS Switchgear SA project opportunities for commercial and industrial solar EPC delivery and project-specific capital partnerships.{% endblock %}
+
+{% block content %}
+    {% include "website/partials/breadcrumbs.html" %}
+    <section class="section opportunity-intro" aria-labelledby="opportunity-intro-title">
+        <div class="container">
+            <span class="eyebrow">Opportunities</span>
+            <h1 id="opportunity-intro-title">PROJECT OPPORTUNITIES &amp; GROWTH</h1>
+            <p>Project-based commercial opportunities for companies seeking solar EPC support or project-specific capital partnerships with RPS Switchgear SA.</p>
+        </div>
+    </section>
+
+    <section class="section section--muted" aria-label="Available opportunities">
+        <div class="container opportunity-list">
+            <article class="opportunity-feature">
+                <div class="opportunity-feature__image">
+                    <img src="{% static 'img/solar_2.webp' %}" alt="Commercial rooftop solar installation" width="1672" height="941" loading="lazy">
+                </div>
+                <div class="opportunity-feature__content">
+                    <span class="eyebrow">01 / Solar EPC</span>
+                    <h2>EPC FOR PV SOLAR SOLUTIONS</h2>
+                    <p>Commercial and industrial photovoltaic solar EPC delivery including energy assessment, engineering, procurement, construction, commissioning and facilitated project funding for qualifying projects.</p>
+                    <a class="button button--primary" href="{% url 'website:pv_solar_epc' %}">Explore Solar EPC</a>
+                </div>
+            </article>
+            <article class="opportunity-feature opportunity-feature--reverse">
+                <div class="opportunity-feature__image">
+                    <img class="opportunity-feature__infographic" src="{% static 'img/project_capital_partners_infographic.png' %}" alt="Project categories for RPS Project Capital Partners: Solar PV and Battery Systems, LV and MV Switchgear Projects, Electrical Contracting and Installations, and Industrial Electrical Projects" width="1448" height="1086" loading="lazy">
+                </div>
+                <div class="opportunity-feature__content">
+                    <span class="eyebrow">02 / Project Partnership</span>
+                    <h2>RPS PROJECT CAPITAL PARTNERS</h2>
+                    <p>A project-specific collaboration programme for established SMEs with confirmed, profitable projects that require short-term working capital to execute.</p>
+                    <a class="button button--primary" href="{% url 'website:project_capital_partners' %}">Explore Project Capital Partners</a>
+                </div>
+            </article>
+        </div>
+    </section>
+{% endblock %}

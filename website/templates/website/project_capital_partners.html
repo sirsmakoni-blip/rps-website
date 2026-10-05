@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}RPS Project Capital Partners | RPS Switchgear SA{% endblock %}
+{% block meta_description %}RPS Project Capital Partners supports qualifying established SMEs with project-specific capital for confirmed, profitable electrical, switchgear, solar and industrial projects.{% endblock %}
+
+{% block content %}
+<div class="capital-partners-page">
+    {% include "website/partials/breadcrumbs.html" %}
+    <section class="solar-hero" aria-labelledby="capital-title">
+        <div class="container solar-hero__grid">
+            <div class="solar-hero__content">
+                <span class="eyebrow">RPS Project Capital Partners</span>
+                <h1 id="capital-title"><span class="capital-partners-hero__title-line">HAVE THE</span> <span class="capital-partners-hero__title-line">PROJECT? WE</span> <span class="capital-partners-hero__title-line">HAVE THE CAPITAL.</span></h1>
+                <p class="solar-hero__subheading">Are you an established SME with a confirmed, profitable project but limited working capital to execute it?</p>
+                <p class="solar-hero__lead">RPS Switchgear SA is introducing RPS Project Capital Partners, a collaboration partnership for capable SMEs. We provide short-term project capital through project-specific partnerships, so you can secure materials, execute the project and unlock your profit.</p>
+                <a class="button button--primary" href="#project-enquiry">Submit a project enquiry</a>
+            </div>
+            <div class="solar-hero__image capital-partners-hero__visual">
+                <a href="{% static 'img/project_capital_partners_infographic.png' %}" aria-label="View project categories infographic at full size">
+                    <img src="{% static 'img/project_capital_partners_infographic.png' %}" alt="Project categories: Solar PV and Battery Systems; LV and MV Switchgear Projects; Electrical Contracting and Installations; Industrial Electrical Projects" width="1448" height="1086" fetchpriority="high">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" aria-labelledby="capital-types-title">
+        <div class="container">
+            <div class="section-heading section-heading--compact">
+                <span class="eyebrow">Project Types</span>
+                <h2 id="capital-types-title">WE ARE LOOKING FOR PROJECTS IN</h2>
+            </div>
+            <ol class="opportunity-rows">
+                <li><span>01</span>Solar PV &amp; Battery Systems</li>
+                <li><span>02</span>LV &amp; MV Switchgear Projects</li>
+                <li><span>03</span>Electrical Contracting &amp; Installations</li>
+                <li><span>04</span>Industrial Electrical Projects</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="section section--muted" aria-labelledby="capital-ideal-title">
+        <div class="container">
+            <div class="section-heading section-heading--compact">
+                <span class="eyebrow">Project Fit</span>
+                <h2 id="capital-ideal-title">OUR IDEAL PROJECT</h2>
+            </div>
+            <dl class="opportunity-facts">
+                <div><dt>Project Value</dt><dd>R500,000 – R1,000,000</dd></div>
+                <div><dt>RPS Capital</dt><dd>Up to R500,000 per project</dd></div>
+                <div><dt>Project Cycle</dt><dd>Maximum 60 days</dd></div>
+                <div><dt>Customer</dt><dd>Confirmed contract / purchase order</dd></div>
+                <div><dt>Profitability</dt><dd>Demonstrable project margin</dd></div>
+                <div><dt>Partner</dt><dd>Established SME with proven execution capability</dd></div>
+            </dl>
+        </div>
+    </section>
+
+    <section class="section" aria-labelledby="capital-process-title">
+        <div class="container">
+            <div class="section-heading section-heading--compact">
+                <span class="eyebrow">Partnership Process</span>
+                <h2 id="capital-process-title">HOW IT WORKS</h2>
+            </div>
+            <ol class="opportunity-rows">
+                <li><span>01</span>You identify and secure the project</li>
+                <li><span>02</span>We assess the project and business case</li>
+                <li><span>03</span>RPS provides agreed project capital</li>
+                <li><span>04</span>The SME executes the project</li>
+                <li><span>05</span>Project proceeds repay the capital and profits are shared according to the agreed partnership</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="section section--muted" aria-labelledby="capital-position-title">
+        <div class="container opportunity-position">
+            <span class="eyebrow">Our Approach</span>
+            <h2 id="capital-position-title">WE DON’T PROVIDE GENERAL BUSINESS LOANS.</h2>
+            <p>We partner with SMEs on selected profitable projects.</p>
+            <p><strong>Our focus is simple: project capital for profitable projects.</strong></p>
+        </div>
+    </section>
+
+    <section class="section opportunity-intro" aria-labelledby="capital-cta-title">
+        <div class="container">
+            <span class="eyebrow">Capital · Capability · Projects · Growth</span>
+            <h2 id="capital-cta-title">HAVE A CONFIRMED PROJECT?</h2>
+            <p>If you have a confirmed project that needs capital to get off the ground, let’s talk.</p>
+        </div>
+    </section>
+
+    {% with enquiry_title="ENQUIRE ABOUT RPS PROJECT CAPITAL PARTNERS" enquiry_button="SUBMIT PROJECT ENQUIRY" %}
+        {% include "website/partials/opportunity_enquiry_form.html" %}
+    {% endwith %}
+</div>
+{% endblock %}

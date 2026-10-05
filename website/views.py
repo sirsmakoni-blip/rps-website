@@ -1,6 +1,17 @@
+import logging
+from urllib.parse import quote, urlencode
+
+from django.conf import settings
+from django.contrib import messages
+from django.core.mail import EmailMessage
 from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.urls import reverse
+
+from .forms import OpportunityEnquiryForm
+
+
+logger = logging.getLogger(__name__)
 
 
 COMPANY_FACTS = [
@@ -170,17 +181,19 @@ REGIONAL_PRESENCE = [
 ]
 
 ENQUIRY_TOPICS = [
-    "MV / HV switchgear requirements",
-    "Low voltage switchboard assemblies",
-    "Reyrolle retrofit scopes",
-    "Substation construction or upgrade work",
-    "Maintenance and protection relay testing",
-    "Renewable energy and electrification projects",
+    "MV / HV Switchgear",
+    "LV Switchboards",
+    "Solar / Renewable Energy",
+    "Substations",
+    "Maintenance / Testing",
+    "Retrofit Projects",
+    "General Enquiries",
 ]
 
 CONTACT_ADDRESS = "33 Kelly Road, Unit 4 Meerzicht Business Park, Jet Park, 1459, Johannesburg"
 CONTACT_MAP_URL = "https://www.google.com/maps/search/?api=1&query=33+Kelly+Road+Jet+Park+Boksburg"
 CONTACT_EMAIL = "sales@rpsswitchgearsa.co.za"
+PROJECTS_EMAIL = "projects@rpsswitchgearsa.co.za"
 CONTACT_PHONE_DISPLAY = "+27 11 392 1640"
 CONTACT_PHONE_URI = "+27113921640"
 CONTACT_WORKING_HOURS = [
@@ -1191,6 +1204,7 @@ def make_cta(
     text,
     eyebrow="Next step",
     primary_label="Contact Us",
+    primary_url=None,
     secondary_label=None,
     secondary_url=None,
 ):
@@ -1199,7 +1213,7 @@ def make_cta(
         "title": title,
         "text": text,
         "primary_label": primary_label,
-        "primary_url": reverse("website:contact"),
+        "primary_url": primary_url or reverse("website:contact"),
         "secondary_label": secondary_label,
         "secondary_url": secondary_url,
     }
@@ -1229,6 +1243,7 @@ def get_item_or_404(mapping, slug, item_name):
 def home(request):
     context = base_context(
         "home",
+        energy_audit_url=reverse("website:pv_solar_epc") + "#project-enquiry",
         company_facts=COMPANY_FACTS,
         why_rps=WHY_RPS,
         featured_products=PRODUCTS,
@@ -1408,6 +1423,97 @@ def service_detail(request, slug):
     return render(request, "website/service_detail.html", context)
 
 
+def opportunities(request):
+    context = base_context(
+        "opportunities",
+        breadcrumbs=make_breadcrumbs({"label": "Opportunities"}),
+    )
+    return render(request, "website/opportunities.html", context)
+
+
+def opportunity_enquiry_form(request, opportunity_name, subject, message_placeholder):
+    form = OpportunityEnquiryForm(request.POST if request.method == "POST" else None)
+    form.fields["message"].widget.attrs["placeholder"] = message_placeholder
+    form.fields["website"].widget.attrs.update({"tabindex": "-1", "autocomplete": "off"})
+    if request.method == "POST" and form.is_valid():
+        details = form.cleaned_data
+        body = "\n".join(
+            [
+                f"Opportunity name: {opportunity_name}",
+                f"Name: {details['name']}",
+                f"Surname: {details['surname']}",
+                f"Company Name: {details['company_name']}",
+                f"Company Email: {details['company_email']}",
+                f"Company Telephone: {details['company_telephone']}",
+                "",
+                "Message:",
+                details["message"],
+            ]
+        )
+        try:
+            EmailMessage(
+                subject=subject,
+                body=body,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=[PROJECTS_EMAIL],
+                reply_to=[details["company_email"]],
+            ).send()
+        except Exception:
+            logger.exception("Unable to send opportunity enquiry")
+            form.add_error(None, "We couldn't send your enquiry. Please try again later.")
+        else:
+            messages.success(request, "Thank you. Your enquiry has been sent to the RPS Projects team.")
+            return redirect(f"{request.path}#project-enquiry")
+    return form
+
+
+def pv_solar_epc(request):
+    form = opportunity_enquiry_form(
+        request,
+        "EPC for PV Solar Solutions",
+        "EPC for PV Solar Solutions – Project Enquiry",
+        "I am interested in the EPC for PV Solar Solutions.",
+    )
+    if not isinstance(form, OpportunityEnquiryForm):
+        return form
+    context = base_context(
+        "opportunities",
+        form=form,
+        breadcrumbs=make_breadcrumbs(
+            {"label": "Opportunities", "url": reverse("website:opportunities")},
+            {"label": "EPC for PV Solar Solutions"},
+        ),
+        cta=make_cta(
+            eyebrow="Get in touch",
+            title="Ready to scope your site?",
+            text="Speak to our engineering team about an energy audit.",
+            primary_label="Submit a project enquiry",
+            primary_url="#project-enquiry",
+        ),
+    )
+    return render(request, "website/pv_solar_epc.html", context)
+
+
+def project_capital_partners(request):
+    form = opportunity_enquiry_form(
+        request,
+        "RPS Project Capital Partners",
+        "RPS Project Capital Partners – Project Enquiry",
+        "I am interested in RPS Project Capital Partners.",
+    )
+    if not isinstance(form, OpportunityEnquiryForm):
+        return form
+    context = base_context(
+        "opportunities",
+        form=form,
+        breadcrumbs=make_breadcrumbs(
+            {"label": "Opportunities", "url": reverse("website:opportunities")},
+            {"label": "RPS Project Capital Partners"},
+        ),
+    )
+    return render(request, "website/project_capital_partners.html", context)
+
+
 def projects(request):
     context = base_context(
         "projects",
@@ -1435,10 +1541,21 @@ def contact(request):
         regional_presence=REGIONAL_PRESENCE,
         contact_image=CONTACT_IMAGE,
         contact_image_mobile=CONTACT_IMAGE_MOBILE,
+        contact_phone_uri=CONTACT_PHONE_URI,
+        contact_working_hours=CONTACT_WORKING_HOURS,
+        contact_location_image="/static/img/contact.webp",
+        contact_location_image_mobile="/static/img/contact-mobile.webp",
+        contact_location_url=(
+            "https://www.google.com/maps/search/?"
+            + urlencode({"api": "1", "query": CONTACT_ADDRESS}, quote_via=quote)
+        ),
         cta=make_cta(
             title="Get in touch with RPS Switchgear SA.",
-            text="Use the contact details on this page to enquire about products, services, and project opportunities.",
-            primary_label="Contact RPS",
+            text="Speak directly with the team about products, services, and project opportunities.",
+            primary_label="Email Sales",
+            primary_url=f"mailto:{CONTACT_EMAIL}",
+            secondary_label="Call RPS",
+            secondary_url=f"tel:{CONTACT_PHONE_URI}",
         ),
     )
     return render(request, "website/contact.html", context)

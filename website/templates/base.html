@@ -61,6 +61,7 @@
                     <a href="{% url 'website:products' %}" class="{% if active_page == 'products' %}is-active{% endif %}">Products</a>
                     <a href="{% url 'website:services' %}" class="{% if active_page == 'services' %}is-active{% endif %}">Services</a>
                     <a href="{% url 'website:projects' %}" class="{% if active_page == 'projects' %}is-active{% endif %}">Projects</a>
+                    <a href="{% url 'website:opportunities' %}" class="{% if active_page == 'opportunities' %}is-active{% endif %}">Opportunities</a>
                     <a href="{% url 'website:contact' %}" class="{% if active_page == 'contact' %}is-active{% endif %}">Contact</a>
                 </nav>
             </div>
@@ -83,14 +84,10 @@
                         src="{% static 'img/logo.webp' %}"
                         alt="RPS Switchgear SA logo"
                         class="brand__logo"
-                        width="960"
-                        height="384"
+                        width="2170"
+                        height="725"
                         decoding="async"
                         loading="lazy">
-                    <span class="brand__text">
-                        <strong>RPS Switchgear SA</strong>
-                        <small>Electrical Engineering & Switchgear</small>
-                    </span>
                 </a>
                 <p class="footer-copy">
                     RPS Switchgear SA (Pty) Ltd is a multi faceted engineering company established in 2008,
@@ -107,6 +104,7 @@
                     <li><a href="{% url 'website:products' %}">Products</a></li>
                     <li><a href="{% url 'website:services' %}">Services</a></li>
                     <li><a href="{% url 'website:projects' %}">Projects</a></li>
+                    <li><a href="{% url 'website:opportunities' %}">Opportunities</a></li>
                     <li><a href="{% url 'website:contact' %}">Contact</a></li>
                 </ul>
             </div>

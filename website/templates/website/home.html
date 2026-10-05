@@ -196,4 +196,25 @@
             </div>
         </div>
     </section>
+
+    <dialog class="solar-announcement" data-solar-announcement aria-modal="true" aria-labelledby="solar-announcement-title" aria-describedby="solar-announcement-description">
+        <div class="solar-announcement__grid">
+            <div class="solar-announcement__content">
+                <button class="solar-announcement__close" type="button" data-solar-announcement-close aria-label="Close solar EPC announcement">&times;</button>
+                <span class="eyebrow">Now Offering</span>
+                <h2 id="solar-announcement-title">EPC for PV Solar Solutions</h2>
+                <p class="solar-announcement__subheading">Commercial &amp; Industrial</p>
+                <p id="solar-announcement-description">Energy audits, end-to-end EPC delivery and facilitated project funding for qualifying commercial and industrial PV projects.</p>
+                <p class="solar-announcement__funding">R1m – R150m project funding facilitated</p>
+                <p class="solar-announcement__note">Funding is subject to project assessment and approval.</p>
+                <div class="solar-announcement__actions">
+                    <a class="button button--primary" href="{% url 'website:pv_solar_epc' %}">Explore Solar EPC</a>
+                    <a class="button button--secondary" href="{{ energy_audit_url }}">Request an Energy Audit</a>
+                </div>
+            </div>
+            <div class="solar-announcement__image">
+                <img src="{% static 'img/solar_1.webp' %}" alt="PV panels installed on an industrial roof" width="1122" height="1402" loading="lazy">
+            </div>
+        </div>
+    </dialog>
 {% endblock %}

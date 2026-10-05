@@ -37,6 +37,15 @@
                 <p>{{ service.intro }}</p>
                 <p>{{ service.overview }}</p>
 
+                {% if service.slug == 'renewable-energy-solutions' %}
+                    <div class="solar-service-link">
+                        <span class="eyebrow">Commercial &amp; Industrial Solar</span>
+                        <h2>EPC for PV Solar Solutions</h2>
+                        <p>Explore energy audits, end-to-end EPC delivery and facilitated project funding for qualifying PV projects.</p>
+                        <a class="text-link" href="{% url 'website:pv_solar_epc' %}">Explore Solar EPC</a>
+                    </div>
+                {% endif %}
+
                 <div class="detail-columns">
                     <div>
                         <h3>Scope Includes</h3>

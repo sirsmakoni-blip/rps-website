@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Commercial &amp; Industrial Solar EPC | RPS Switchgear SA{% endblock %}
+{% block meta_description %}RPS Switchgear SA offers commercial and industrial solar EPC delivery including energy audits, engineering, procurement, construction, commissioning and facilitated project funding for qualifying projects.{% endblock %}
+
+{% block content %}
+    {% include "website/partials/breadcrumbs.html" %}
+
+    <section class="solar-hero" aria-labelledby="solar-title">
+        <div class="container solar-hero__grid">
+            <div class="solar-hero__content">
+                <span class="eyebrow">Opportunities</span>
+                <h1 id="solar-title">EPC for PV Solar Solutions</h1>
+                <p class="solar-hero__subheading">Commercial &amp; Industrial</p>
+                <p class="solar-hero__lead">RPS provides commercial and industrial photovoltaic solar EPC delivery, from energy assessment and engineering through procurement, construction and commissioning.</p>
+                <a class="button button--primary" href="#project-enquiry">Enquire About Solar EPC</a>
+            </div>
+            <div class="solar-hero__image">
+                <img src="{% static 'img/solar_2.webp' %}" alt="PV solar panels on a commercial rooftop" width="1672" height="941" fetchpriority="high">
+            </div>
+        </div>
+    </section>
+
+    <section class="section" aria-labelledby="solar-included-title">
+        <div class="container">
+            <div class="section-heading section-heading--compact">
+                <span class="eyebrow">What's Included</span>
+                <h2 id="solar-included-title">From site assessment to commissioned plant.</h2>
+            </div>
+            <div class="solar-included">
+                <article class="solar-included__item">
+                    <span class="solar-included__step">Step 01</span>
+                    <h3>Energy Audits</h3>
+                    <p>We assess your site's consumption profile to determine the optimal PV Solar Plant configuration, capacity and associated project costs.</p>
+                </article>
+                <article class="solar-included__item">
+                    <span class="solar-included__step">Step 02</span>
+                    <h3>EPC Delivery</h3>
+                    <p>Engineering, procurement and construction handled end to end — one contractor, one point of accountability, from design to commissioning.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--muted" aria-labelledby="solar-process-title">
+        <div class="container">
+            <div class="section-heading section-heading--compact">
+                <span class="eyebrow">Project Delivery Process</span>
+                <h2 id="solar-process-title">A clear route from audit to handover.</h2>
+            </div>
+            <ol class="solar-process">
+                <li><span>01</span><strong>Energy Audit</strong></li>
+                <li><span>02</span><strong>Feasibility &amp; System Design</strong></li>
+                <li><span>03</span><strong>Commercial Proposal</strong></li>
+                <li><span>04</span><strong>Funding Facilitation</strong></li>
+                <li><span>05</span><strong>Engineering &amp; Procurement</strong></li>
+                <li><span>06</span><strong>Construction</strong></li>
+                <li><span>07</span><strong>Testing &amp; Commissioning</strong></li>
+                <li><span>08</span><strong>Handover &amp; Support</strong></li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="section" aria-labelledby="solar-funding-title">
+        <div class="container solar-funding">
+            <div class="solar-funding__content">
+                <span class="eyebrow">Project Funding Facilitated</span>
+                <h2 id="solar-funding-title">We help you fund it</h2>
+                <p>Beyond design and build, we connect qualifying commercial and industrial projects with funding partners to help get PV solar plants installed without the full capital outlay sitting on the client's balance sheet.</p>
+                <p class="solar-funding__note">Funding is facilitated through partners and is subject to project assessment and approval.</p>
+            </div>
+            <div class="solar-funding__range" aria-label="Project funding facilitated from R1,000,000 to R150,000,000">
+                <strong>R1,000,000</strong>
+                <span>to</span>
+                <strong>R150,000,000</strong>
+            </div>
+        </div>
+    </section>
+    {% with enquiry_title="ENQUIRE ABOUT EPC FOR PV SOLAR SOLUTIONS" enquiry_intro="Tell us about your company and project requirements and our team will get in touch." enquiry_button="SUBMIT ENQUIRY" %}
+        {% include "website/partials/opportunity_enquiry_form.html" %}
+    {% endwith %}
+{% endblock %}

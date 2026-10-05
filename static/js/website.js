@@ -20,14 +20,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         siteNav.querySelectorAll("a").forEach(function (link) {
             link.addEventListener("click", function () {
-                if (window.innerWidth <= 960) {
+                if (window.innerWidth <= 1100) {
                     closeMobileNav();
                 }
             });
         });
 
         window.addEventListener("resize", function () {
-            if (window.innerWidth > 960) {
+            if (window.innerWidth > 1100) {
                 closeMobileNav();
             }
         });
@@ -44,5 +44,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
         handleScroll();
         window.addEventListener("scroll", handleScroll, { passive: true });
+    }
+
+    var solarAnnouncement = document.querySelector("[data-solar-announcement]");
+    if (solarAnnouncement && typeof solarAnnouncement.showModal === "function") {
+        var closeAnnouncement = solarAnnouncement.querySelector("[data-solar-announcement-close]");
+        var previousFocus = null;
+
+        function dismissAnnouncement() {
+            if (!solarAnnouncement.open) {
+                return;
+            }
+            solarAnnouncement.close();
+            document.body.style.overflow = "";
+            if (previousFocus && previousFocus.isConnected) {
+                previousFocus.focus();
+            }
+        }
+
+        closeAnnouncement.addEventListener("click", dismissAnnouncement);
+        solarAnnouncement.addEventListener("cancel", function (event) {
+            event.preventDefault();
+            dismissAnnouncement();
+        });
+        solarAnnouncement.addEventListener("click", function (event) {
+            if (event.target === solarAnnouncement) {
+                dismissAnnouncement();
+            }
+        });
+        solarAnnouncement.addEventListener("close", function () {
+            document.body.style.overflow = "";
+        });
+
+        window.addEventListener("load", function () {
+            window.setTimeout(function () {
+                if (!solarAnnouncement.open) {
+                    previousFocus = document.activeElement;
+                    solarAnnouncement.showModal();
+                    document.body.style.overflow = "hidden";
+                    closeAnnouncement.focus();
+                }
+            }, 1500);
+        });
     }
 });
