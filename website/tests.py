@@ -1,11 +1,50 @@
+import os
+import runpy
 from unittest.mock import patch
 
+from django.conf import settings
 from django.core import mail
-from django.test import Client, TestCase, override_settings
+from django.test import Client, SimpleTestCase, TestCase, override_settings
 from django.urls import reverse
 
 
-@override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
+class OpportunityEmailSettingsTests(SimpleTestCase):
+    def test_smtp_defaults_without_environment_or_password(self):
+        with patch.dict(os.environ, {}, clear=True):
+            config = runpy.run_path(str(settings.BASE_DIR / "config" / "settings.py"))
+        self.assertEqual(config["EMAIL_BACKEND"], "django.core.mail.backends.smtp.EmailBackend")
+        self.assertEqual(config["EMAIL_HOST"], "smtp.mweb.co.za")
+        self.assertEqual(config["EMAIL_PORT"], 587)
+        self.assertTrue(config["EMAIL_USE_TLS"])
+        self.assertEqual(config["EMAIL_HOST_USER"], "projects@rpsswitchgearsa.co.za")
+        self.assertEqual(config["EMAIL_HOST_PASSWORD"], "")
+        self.assertEqual(
+            config["DEFAULT_FROM_EMAIL"],
+            "RPS Switchgear SA Projects <projects@rpsswitchgearsa.co.za>",
+        )
+
+    def test_email_settings_can_be_supplied_through_environment(self):
+        environment = {
+            "EMAIL_BACKEND": "django.core.mail.backends.locmem.EmailBackend",
+            "EMAIL_HOST": "smtp.example.com",
+            "EMAIL_PORT": "2525",
+            "EMAIL_USE_TLS": "False",
+            "EMAIL_HOST_USER": "test@example.com",
+            "EMAIL_HOST_PASSWORD": "dummy-test-value",
+            "DEFAULT_FROM_EMAIL": "Test <test@example.com>",
+        }
+        with patch.dict(os.environ, environment, clear=True):
+            config = runpy.run_path(str(settings.BASE_DIR / "config" / "settings.py"))
+        expected_settings = {**environment, "EMAIL_PORT": 2525, "EMAIL_USE_TLS": False}
+        for key, expected in expected_settings.items():
+            with self.subTest(setting=key):
+                self.assertEqual(config[key], expected)
+
+
+@override_settings(
+    EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend",
+    EMAIL_HOST_PASSWORD="",
+)
 class OpportunityPageTests(TestCase):
     enquiry_data = {
         "name": "Alex",
@@ -63,6 +102,7 @@ class OpportunityPageTests(TestCase):
         self.assertIn("Opportunity name: EPC for PV Solar Solutions", email.body)
         self.assertIn("Company Telephone: +27 11 555 0123", email.body)
         self.assertEqual(email.reply_to, ["alex@example.com"])
+        self.assertEqual(email.from_email, settings.DEFAULT_FROM_EMAIL)
         self.assertContains(self.client.get(response["Location"]), "Thank you. Your enquiry has been sent")
 
     def test_invalid_epc_enquiry_does_not_send(self):
@@ -87,6 +127,8 @@ class OpportunityPageTests(TestCase):
         self.assertEqual(email.to, ["projects@rpsswitchgearsa.co.za"])
         self.assertEqual(email.subject, "RPS Project Capital Partners – Project Enquiry")
         self.assertIn("Opportunity name: RPS Project Capital Partners", email.body)
+        self.assertEqual(email.reply_to, ["alex@example.com"])
+        self.assertEqual(email.from_email, settings.DEFAULT_FROM_EMAIL)
 
     def test_invalid_capital_partners_enquiry_does_not_send(self):
         data = {**self.enquiry_data, "message": ""}
